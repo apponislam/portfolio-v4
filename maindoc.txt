@@ -1,0 +1,11 @@
+First choice color plate
+#007979
+#24B1B1
+#FFF0E4
+#FFE0C5
+
+Second choice color plate 
+#9E6F21
+#FFEEB3
+#B8E7E1
+#D4FAFC
