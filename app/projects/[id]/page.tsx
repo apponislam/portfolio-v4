@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Calendar, User, Tag } from 'lucide-react';
-import portfolioData from '../../../data/portfolio.json';
 import projectsData from '../../../data/projects.json';
 
 
