@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Mail, ArrowUp } from 'lucide-react';
-import portfolioData from '@/data/portfolio.json';
+import detailsData from '@/data/details.json';
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { socials, email } = portfolioData.details;
+  const { socials, email } = detailsData;
 
   return (
     <footer className="w-full bg-[#f9fafb] border-t border-neutral-100 py-12 mt-auto">
@@ -39,7 +39,7 @@ export default function Footer() {
         {/* Info Column */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
           <p className="font-semibold text-sm tracking-tight text-neutral-800">
-            {portfolioData.details.name}
+            {detailsData.name}
           </p>
           <p className="text-xs text-neutral-500">
             &copy; {currentYear} Portfolio. All rights reserved.

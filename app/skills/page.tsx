@@ -1,7 +1,8 @@
-import portfolioData from '@/data/portfolio.json';
+import skillsData from '@/data/skills.json';
 
 export default function Skills() {
-  const { skills } = portfolioData;
+  const skills = skillsData;
+
 
   // Group skills by category
   const categories = Array.from(new Set(skills.map((s) => s.category)));

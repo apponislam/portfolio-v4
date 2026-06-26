@@ -1,14 +1,21 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, GraduationCap, Award, ExternalLink } from 'lucide-react';
-import portfolioData from '@/data/portfolio.json';
+import detailsData from '@/data/details.json';
 import projectsData from '@/data/projects.json';
+import skillsData from '@/data/skills.json';
+import educationData from '@/data/education.json';
+import certificatesData from '@/data/certificates.json';
 
 export default function Home() {
-  const { details, education, certificates, skills } = portfolioData;
+  const details = detailsData;
   const projects = projectsData;
+  const skills = skillsData;
+  const education = educationData;
+  const certificates = certificatesData;
 
   // Limit featured projects to first 3
   const featuredProjects = projects.slice(0, 3);
+
 
   
   // Highlight some skills for the scrolling marquee ticker

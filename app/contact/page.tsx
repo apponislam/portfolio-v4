@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, ArrowRight } from 'lucide-react';
-import portfolioData from '@/data/portfolio.json';
+import detailsData from '@/data/details.json';
 
 export default function Contact() {
-  const { email, location, socials } = portfolioData.details;
+  const { email, location, socials } = detailsData;
+
 
   // Form State
   const [formData, setFormData] = useState({
