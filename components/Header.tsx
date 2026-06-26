@@ -4,7 +4,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { X, Menu, ArrowRight } from 'lucide-react';
+import { Norican } from 'next/font/google';
 import detailsData from '@/data/details.json';
+
+const norican = Norican({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function Header() {
   const pathname = usePathname();
@@ -54,8 +61,7 @@ export default function Header() {
         <div className="container mx-auto px-6 md:px-8 flex items-center justify-between">
           {/* Left Side: Logo */}
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="font-bold text-base sm:text-lg tracking-tight text-neutral-900 flex items-center gap-1.5">
-              <span className="w-4 h-4 bg-black rounded-sm transform rotate-45 inline-block" />
+            <Link href="/" className={`${norican.className} text-2xl sm:text-3xl text-neutral-900 leading-none`}>
               {detailsData.name}
             </Link>
           </div>
