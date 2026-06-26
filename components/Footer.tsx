@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import { Mail, ArrowUp } from 'lucide-react';
+import { Mail, ArrowUp, ArrowRight } from 'lucide-react';
 import detailsData from '@/data/details.json';
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -33,78 +35,167 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { socials, email } = detailsData;
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="w-full bg-[#f9fafb] border-t border-neutral-100 py-12 mt-auto">
-      <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Info Column */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
-          <p className="font-semibold text-sm tracking-tight text-neutral-800">
-            {detailsData.name}
-          </p>
-          <p className="text-xs text-neutral-500">
-            &copy; {currentYear} Portfolio. All rights reserved.
-          </p>
+    <footer className="w-full bg-[#eaeaea] border-t border-neutral-300/60 pt-20 pb-12 mt-20">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Top CTA & Links Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-neutral-300/40">
+          
+          {/* Left Column: Big Bold CTA */}
+          <div className="lg:col-span-6 flex flex-col items-start gap-6">
+            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-neutral-900 leading-none">
+              Let's create <br />
+              something great.
+            </h2>
+            <p className="text-neutral-600 text-sm sm:text-base max-w-md">
+              Have an idea, project, or opportunity you'd like to discuss? Drop me a message and let's make it happen.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-black text-white hover:bg-neutral-800 text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98] transition-all group"
+            >
+              Get In Touch
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          {/* Right Columns: Links & Info */}
+          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:justify-items-end">
+            
+            {/* Navigation Sitemap */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Navigation</h4>
+              <ul className="flex flex-col gap-2.5">
+                <li>
+                  <Link href="/" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/skills" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                    Skills
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Channels */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Connect</h4>
+              <ul className="flex flex-col gap-2.5">
+                {socials.github && (
+                  <li>
+                    <a
+                      href={socials.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                      GitHub
+                    </a>
+                  </li>
+                )}
+                {socials.linkedin && (
+                  <li>
+                    <a
+                      href={socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <LinkedinIcon className="w-3.5 h-3.5" />
+                      LinkedIn
+                    </a>
+                  </li>
+                )}
+                {socials.twitter && (
+                  <li>
+                    <a
+                      href={socials.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <TwitterIcon className="w-3.5 h-3.5" />
+                      Twitter
+                    </a>
+                  </li>
+                )}
+                {socials.facebook && (
+                  <li>
+                    <a
+                      href={socials.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <FacebookIcon className="w-3.5 h-3.5" />
+                      Facebook
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            {/* Contact Email/Status */}
+            <div className="col-span-2 sm:col-span-1 flex flex-col gap-4">
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Direct</h4>
+              <div className="flex flex-col gap-2.5">
+                {email && (
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5 break-all"
+                  >
+                    <Mail className="w-3.5 h-3.5 shrink-0" />
+                    {email}
+                  </a>
+                )}
+                <div className="text-[11px] text-neutral-500 font-medium">
+                  Based in Bangladesh
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        {/* Social Links */}
-        <div className="flex items-center gap-4">
-          {socials.github && (
-            <a
-              href={socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-white border border-neutral-100 rounded-full hover:scale-105 active:scale-95 transition-all text-neutral-600 hover:text-black"
-              aria-label="GitHub"
-            >
-              <GithubIcon className="w-4 h-4" />
-            </a>
-          )}
-          {socials.linkedin && (
-            <a
-              href={socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-white border border-neutral-100 rounded-full hover:scale-105 active:scale-95 transition-all text-neutral-600 hover:text-black"
-              aria-label="LinkedIn"
-            >
-              <LinkedinIcon className="w-4 h-4" />
-            </a>
-          )}
-          {socials.twitter && (
-            <a
-              href={socials.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-white border border-neutral-100 rounded-full hover:scale-105 active:scale-95 transition-all text-neutral-600 hover:text-black"
-              aria-label="Twitter"
-            >
-              <TwitterIcon className="w-4 h-4" />
-            </a>
-          )}
-          {socials.facebook && (
-            <a
-              href={socials.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-white border border-neutral-100 rounded-full hover:scale-105 active:scale-95 transition-all text-neutral-600 hover:text-black"
-              aria-label="Facebook"
-            >
-              <FacebookIcon className="w-4 h-4" />
-            </a>
-          )}
-          {email && (
-            <a
-              href={`mailto:${email}`}
-              className="p-2 bg-white border border-neutral-100 rounded-full hover:scale-105 active:scale-95 transition-all text-neutral-600 hover:text-black"
-              aria-label="Email"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-          )}
+        {/* Bottom copyright & Scroll to Top */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <span className="text-xs font-bold tracking-tight text-neutral-900">
+              {detailsData.name}
+            </span>
+            <span className="hidden sm:inline text-neutral-300">|</span>
+            <span className="text-[11px] text-neutral-500">
+              &copy; {currentYear} • All rights reserved.
+            </span>
+          </div>
+
+          <button
+            onClick={scrollToTop}
+            className="p-3 bg-white hover:bg-neutral-900 border border-neutral-300/40 rounded-full hover:scale-105 active:scale-95 text-neutral-600 hover:text-white shadow-sm transition-all group"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
         </div>
       </div>
     </footer>
-
   );
 }
 
