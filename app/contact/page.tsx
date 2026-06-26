@@ -91,24 +91,38 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Quick Copy Email Widget */}
-          <div className="w-full max-w-sm bg-white border border-neutral-300/40 rounded-2xl p-4 flex items-center justify-between shadow-sm group">
-            <div className="flex items-center gap-3">
+          {/* Direct Contact Cards */}
+          <div className="flex flex-col gap-3 w-full max-w-sm">
+            {/* Quick Copy Email Widget */}
+            <div className="bg-white border border-neutral-300/40 rounded-2xl p-4 flex items-center justify-between shadow-sm group">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-600">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[8px] font-extrabold uppercase tracking-widest text-neutral-400">Direct Email</span>
+                  <span className="text-xs font-bold text-neutral-800 break-all">{email}</span>
+                </div>
+              </div>
+              <button 
+                onClick={handleCopyEmail}
+                className="p-2.5 hover:bg-neutral-50 border border-transparent hover:border-neutral-200 rounded-xl transition-all text-neutral-400 hover:text-black cursor-pointer"
+                title="Copy email to clipboard"
+              >
+                {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+              </button>
+            </div>
+
+            {/* Location Widget */}
+            <div className="bg-white border border-neutral-300/40 rounded-2xl p-4 flex items-center gap-3 shadow-sm">
               <div className="p-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-600">
-                <Mail className="w-4 h-4" />
+                <MapPin className="w-4 h-4 text-blue-600" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[8px] font-extrabold uppercase tracking-widest text-neutral-400">Direct Email</span>
-                <span className="text-xs font-bold text-neutral-800 break-all">{email}</span>
+                <span className="text-[8px] font-extrabold uppercase tracking-widest text-neutral-400">Location</span>
+                <span className="text-xs font-bold text-neutral-800">{location}</span>
               </div>
             </div>
-            <button 
-              onClick={handleCopyEmail}
-              className="p-2.5 hover:bg-neutral-50 border border-transparent hover:border-neutral-200 rounded-xl transition-all text-neutral-400 hover:text-black"
-              title="Copy email to clipboard"
-            >
-              {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
-            </button>
           </div>
 
           {/* Social Icons row */}
