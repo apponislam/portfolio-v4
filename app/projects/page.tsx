@@ -37,9 +37,8 @@ export default function Projects() {
             <div className="p-6 sm:p-8 flex-1 flex flex-col">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs text-neutral-400 font-semibold tracking-wide uppercase">
-                  {project.client}
+                  Project • {project.year}
                 </span>
-                <span className="text-xs text-neutral-400 font-medium">{project.year}</span>
               </div>
               
               <h2 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-orange-500 transition-colors flex items-center justify-between">

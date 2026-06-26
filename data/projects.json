@@ -5,10 +5,36 @@
     "description": "Enterprise cloud console dashboard with real-time analytics monitoring, Kubernetes cluster views, and automated CI/CD pipeline integrations.",
     "detailedDescription": "iBox Cloud Platform is an all-in-one DevOps console designed for organizations migrating workloads to the cloud. It features real-time resource tracking, dynamic charting using Recharts, live log streams via WebSockets, and direct integrations with AWS/GCP APIs. The system scales to support over 10,000 requests per minute with minimal latency.",
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1581291518655-9523c932dedf?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["Next.js", "Tailwind CSS", "Go", "Docker", "AWS"],
+    "technologiesUsed": ["Next.js 15", "Tailwind CSS v4", "Go (Golang)", "Docker", "AWS ECS", "Kubernetes", "Recharts", "WebSockets", "Redis"],
     "client": "iBox Lab",
     "year": "2025",
-    "link": "https://github.com"
+    "startDate": "Nov 2024",
+    "endDate": "Feb 2025",
+    "liveLink": "https://ibox-cloud-console.example.com",
+    "productionLink": "https://console.iboxlab.com",
+    "githubFrontend": "https://github.com/example/ibox-console-frontend",
+    "githubBackend": "https://github.com/example/ibox-console-backend",
+    "hasCollaborators": true,
+    "collaborators": [
+      {
+        "name": "Alex Mercer",
+        "role": "Lead DevOps Architect",
+        "github": "https://github.com"
+      },
+      {
+        "name": "Sophia Vance",
+        "role": "Backend Engineer",
+        "github": "https://github.com"
+      }
+    ],
+    "link": "https://ibox-cloud-console.example.com"
   },
   {
     "id": "saas-billing-system",
@@ -16,10 +42,24 @@
     "description": "Multi-tenant subscription manager featuring customized checkout links, usage tracking, Stripe billing integrations, and transactional emails.",
     "detailedDescription": "Aura SaaS Billing handles subscription cycles, automated invoicing, customer portal redirections, and secure credit card verification workflows using Stripe. Built with strong TypeScript patterns and secure backend routes to manage webhook events efficiently.",
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["React", "Node.js", "Stripe API", "PostgreSQL", "Prisma"],
+    "technologiesUsed": ["React 19", "Tailwind CSS v4", "Node.js", "Express.js", "Stripe API", "PostgreSQL", "Prisma ORM", "TypeScript", "Nodemailer"],
     "client": "Aura Inc.",
     "year": "2024",
-    "link": "https://github.com"
+    "startDate": "Aug 2024",
+    "endDate": "Oct 2024",
+    "liveLink": "https://aura-billing-preview.example.com",
+    "productionLink": "",
+    "githubFrontend": "https://github.com/example/aura-billing-app",
+    "githubBackend": "",
+    "hasCollaborators": false,
+    "collaborators": [],
+    "link": "https://aura-billing-preview.example.com"
   },
   {
     "id": "collab-sketchpad",
@@ -27,21 +67,55 @@
     "description": "Real-time vector sketchpad featuring low-latency drawing synchronization, active cursor tracking, layer management, and PDF exports.",
     "detailedDescription": "SyncSketch is a collaborative canvas application leveraging WebSockets to synchronize drawing strokes, text additions, and canvas pan actions across thousands of concurrent clients. Optimized with HTML5 canvas and delta-based sync algorithms for smooth, near-zero-latency rendering.",
     "image": "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["Next.js", "Socket.io", "HTML5 Canvas", "Redis", "TypeScript"],
+    "technologiesUsed": ["Next.js 14", "Socket.io", "HTML5 Canvas API", "Redis Pub/Sub", "TypeScript", "Framer Motion", "Tailwind CSS"],
     "client": "DesignLabs",
     "year": "2024",
-    "link": "https://github.com"
+    "startDate": "May 2024",
+    "endDate": "Jul 2024",
+    "liveLink": "https://sync-sketch.example.com",
+    "productionLink": "https://syncsketch.designlabs.com",
+    "githubFrontend": "https://github.com/example/syncsketch-workspace",
+    "githubBackend": "https://github.com/example/syncsketch-socket-server",
+    "hasCollaborators": true,
+    "collaborators": [
+      {
+        "name": "Marcus Aurelius",
+        "role": "Frontend Canvas Engineer",
+        "github": "https://github.com"
+      }
+    ],
+    "link": "https://sync-sketch.example.com"
   },
   {
     "id": "ecommerce-storefront",
     "title": "Zelo E-Commerce Store",
-    "description": "Ultra-fast headles ecommerce storefront utilizing Next.js server components, cart operations with local storage sync, and custom CMS catalog.",
+    "description": "Ultra-fast headless ecommerce storefront utilizing Next.js server components, cart operations with local storage sync, and custom CMS catalog.",
     "detailedDescription": "Zelo E-Commerce is built around modern headless architecture, integrating Shopify APIs into a customized Next.js frontend. Features robust image optimization, skeleton loaders, custom search with multi-parameter filtering, and preloaded product details.",
     "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["Next.js", "Tailwind CSS", "Shopify API", "GraphQL"],
+    "technologiesUsed": ["Next.js 14 (App Router)", "GraphQL Client", "Shopify Storefront API", "Tailwind CSS", "Headless UI"],
     "client": "Zelo Brands",
     "year": "2023",
-    "link": "https://github.com"
+    "startDate": "Oct 2023",
+    "endDate": "Dec 2023",
+    "liveLink": "https://zelostore.example.com",
+    "productionLink": "https://zelo.com",
+    "githubFrontend": "https://github.com/example/zelo-headless-store",
+    "githubBackend": "",
+    "hasCollaborators": false,
+    "collaborators": [],
+    "link": "https://zelostore.example.com"
   },
   {
     "id": "dev-community-hub",
@@ -49,10 +123,35 @@
     "description": "Developer-focused social network showcasing portfolio pages, project reviews, markdown blogs, and direct messaging channels.",
     "detailedDescription": "DevLink provides an online forum for software engineers to publish work and collaborate. The platform utilizes server-side rendering for optimal search indexing, a custom markdown editor with syntax highlighting, and MongoDB search indices to find developers matching specific tags.",
     "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["Next.js", "MongoDB", "Express", "Node.js"],
+    "technologiesUsed": ["Next.js", "Express.js", "Node.js", "MongoDB", "Mongoose", "Socket.io", "Markdown-it", "JWT Auth"],
     "client": "DevLink Foundation",
     "year": "2023",
-    "link": "https://github.com"
+    "startDate": "Feb 2023",
+    "endDate": "Jul 2023",
+    "liveLink": "https://devlink-hub.example.com",
+    "productionLink": "",
+    "githubFrontend": "https://github.com/example/devlink-platform",
+    "githubBackend": "https://github.com/example/devlink-platform",
+    "hasCollaborators": true,
+    "collaborators": [
+      {
+        "name": "Liam Carter",
+        "role": "UI Designer",
+        "github": "https://github.com"
+      },
+      {
+        "name": "Maya Lin",
+        "role": "Database Administrator",
+        "github": "https://github.com"
+      }
+    ],
+    "link": "https://devlink-hub.example.com"
   },
   {
     "id": "crypto-market-tracker",
@@ -60,9 +159,23 @@
     "description": "High-frequency dashboard displaying cryptocurrency charts, market stats, price alert notifications, and secure watchlists.",
     "detailedDescription": "Apex Crypto Tracker streams live exchange rate feeds using CoinGecko REST APIs and WebSocket market feeds. Includes configurable price threshold alerts sent via desktop push notifications, persistent custom user watchlists, and dynamic historical charting.",
     "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800",
+    "coverPhoto": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=1200",
+    "pictures": [
+      "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1620336655055-088d06e36bf0?auto=format&fit=crop&q=80&w=800"
+    ],
     "tags": ["React", "Chart.js", "CoinGecko API", "WebSockets", "Firebase"],
+    "technologiesUsed": ["React 18", "Chart.js", "CoinGecko REST API", "WebSockets API", "Firebase Authentication", "Firestore Database", "Tailwind CSS"],
     "client": "Apex Market Research",
     "year": "2022",
-    "link": "https://github.com"
+    "startDate": "Sep 2022",
+    "endDate": "Dec 2022",
+    "liveLink": "https://apex-crypto.example.com",
+    "productionLink": "https://apex-crypto-live.com",
+    "githubFrontend": "https://github.com/example/apex-crypto-tracker",
+    "githubBackend": "",
+    "hasCollaborators": false,
+    "collaborators": [],
+    "link": "https://apex-crypto.example.com"
   }
 ]
