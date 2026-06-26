@@ -1,0 +1,74 @@
+[
+  {
+    "name": "React / Next.js",
+    "category": "Frontend"
+  },
+  {
+    "name": "TypeScript",
+    "category": "Frontend"
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "Frontend"
+  },
+  {
+    "name": "HTML5 / CSS3",
+    "category": "Frontend"
+  },
+  {
+    "name": "Node.js",
+    "category": "Backend"
+  },
+  {
+    "name": "Go (Golang)",
+    "category": "Backend"
+  },
+  {
+    "name": "Express.js",
+    "category": "Backend"
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "Backend"
+  },
+  {
+    "name": "MongoDB",
+    "category": "Backend"
+  },
+  {
+    "name": "Prisma ORM",
+    "category": "Backend"
+  },
+  {
+    "name": "Docker & Kubernetes",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "AWS (S3, EC2, Lambda)",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "Git & GitHub Actions",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "Vercel & Netlify",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "UI/UX Prototyping",
+    "category": "Design & Core"
+  },
+  {
+    "name": "Figma",
+    "category": "Design & Core"
+  },
+  {
+    "name": "Responsive Design",
+    "category": "Design & Core"
+  },
+  {
+    "name": "REST & GraphQL APIs",
+    "category": "Design & Core"
+  }
+]

@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import portfolioData from '@/data/portfolio.json';
+import projectsData from '@/data/projects.json';
 
 export default function Projects() {
-  const { projects } = portfolioData;
+  const projects = projectsData;
+
 
   return (
     <main className="container mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col">

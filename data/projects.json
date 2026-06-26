@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ibox-transformation",
+    "title": "iBox Cloud Platform",
+    "description": "Enterprise cloud console dashboard with real-time analytics monitoring, Kubernetes cluster views, and automated CI/CD pipeline integrations.",
+    "detailedDescription": "iBox Cloud Platform is an all-in-one DevOps console designed for organizations migrating workloads to the cloud. It features real-time resource tracking, dynamic charting using Recharts, live log streams via WebSockets, and direct integrations with AWS/GCP APIs. The system scales to support over 10,000 requests per minute with minimal latency.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Next.js", "Tailwind CSS", "Go", "Docker", "AWS"],
+    "client": "iBox Lab",
+    "year": "2025",
+    "link": "https://github.com"
+  },
+  {
+    "id": "saas-billing-system",
+    "title": "Aura SaaS Billing",
+    "description": "Multi-tenant subscription manager featuring customized checkout links, usage tracking, Stripe billing integrations, and transactional emails.",
+    "detailedDescription": "Aura SaaS Billing handles subscription cycles, automated invoicing, customer portal redirections, and secure credit card verification workflows using Stripe. Built with strong TypeScript patterns and secure backend routes to manage webhook events efficiently.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "tags": ["React", "Node.js", "Stripe API", "PostgreSQL", "Prisma"],
+    "client": "Aura Inc.",
+    "year": "2024",
+    "link": "https://github.com"
+  },
+  {
+    "id": "collab-sketchpad",
+    "title": "SyncSketch Collaborative Board",
+    "description": "Real-time vector sketchpad featuring low-latency drawing synchronization, active cursor tracking, layer management, and PDF exports.",
+    "detailedDescription": "SyncSketch is a collaborative canvas application leveraging WebSockets to synchronize drawing strokes, text additions, and canvas pan actions across thousands of concurrent clients. Optimized with HTML5 canvas and delta-based sync algorithms for smooth, near-zero-latency rendering.",
+    "image": "https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Next.js", "Socket.io", "HTML5 Canvas", "Redis", "TypeScript"],
+    "client": "DesignLabs",
+    "year": "2024",
+    "link": "https://github.com"
+  },
+  {
+    "id": "ecommerce-storefront",
+    "title": "Zelo E-Commerce Store",
+    "description": "Ultra-fast headles ecommerce storefront utilizing Next.js server components, cart operations with local storage sync, and custom CMS catalog.",
+    "detailedDescription": "Zelo E-Commerce is built around modern headless architecture, integrating Shopify APIs into a customized Next.js frontend. Features robust image optimization, skeleton loaders, custom search with multi-parameter filtering, and preloaded product details.",
+    "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Next.js", "Tailwind CSS", "Shopify API", "GraphQL"],
+    "client": "Zelo Brands",
+    "year": "2023",
+    "link": "https://github.com"
+  },
+  {
+    "id": "dev-community-hub",
+    "title": "DevLink Community Hub",
+    "description": "Developer-focused social network showcasing portfolio pages, project reviews, markdown blogs, and direct messaging channels.",
+    "detailedDescription": "DevLink provides an online forum for software engineers to publish work and collaborate. The platform utilizes server-side rendering for optimal search indexing, a custom markdown editor with syntax highlighting, and MongoDB search indices to find developers matching specific tags.",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    "tags": ["Next.js", "MongoDB", "Express", "Node.js"],
+    "client": "DevLink Foundation",
+    "year": "2023",
+    "link": "https://github.com"
+  },
+  {
+    "id": "crypto-market-tracker",
+    "title": "Apex Crypto Tracker",
+    "description": "High-frequency dashboard displaying cryptocurrency charts, market stats, price alert notifications, and secure watchlists.",
+    "detailedDescription": "Apex Crypto Tracker streams live exchange rate feeds using CoinGecko REST APIs and WebSocket market feeds. Includes configurable price threshold alerts sent via desktop push notifications, persistent custom user watchlists, and dynamic historical charting.",
+    "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800",
+    "tags": ["React", "Chart.js", "CoinGecko API", "WebSockets", "Firebase"],
+    "client": "Apex Market Research",
+    "year": "2022",
+    "link": "https://github.com"
+  }
+]

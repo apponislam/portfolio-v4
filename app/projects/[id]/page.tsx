@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Calendar, User, Tag } from 'lucide-react';
 import portfolioData from '../../../data/portfolio.json';
+import projectsData from '../../../data/projects.json';
 
 
 interface PageProps {
@@ -9,14 +10,15 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return portfolioData.projects.map((project) => ({
+  return projectsData.map((project) => ({
     id: project.id,
   }));
 }
 
 export default async function ProjectDetail({ params }: PageProps) {
   const { id } = await params;
-  const project = portfolioData.projects.find((p) => p.id === id);
+  const project = projectsData.find((p) => p.id === id);
+
 
   if (!project) {
     notFound();

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "AWS Certified Solutions Architect – Associate",
+    "issuer": "Amazon Web Services",
+    "date": "Jan 2025",
+    "credentialUrl": "https://aws.amazon.com"
+  },
+  {
+    "title": "Next.js Advanced Certification",
+    "issuer": "Vercel",
+    "date": "Nov 2024",
+    "credentialUrl": "https://vercel.com"
+  },
+  {
+    "title": "Meta Front-End Developer Professional Certificate",
+    "issuer": "Meta / Coursera",
+    "date": "Aug 2024",
+    "credentialUrl": "https://coursera.org"
+  }
+]

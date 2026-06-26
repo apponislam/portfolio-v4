@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { X, Menu, ArrowRight } from 'lucide-react';
-import portfolioData from '@/data/portfolio.json';
+import detailsData from '@/data/details.json';
 
 export default function Header() {
   const pathname = usePathname();
@@ -21,7 +21,7 @@ export default function Header() {
 
 
       {/* 1. Centered Top Notch stuck to the ceiling */}
-      {portfolioData.details.availableForHire && (
+      {detailsData.availableForHire && (
         <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-black text-white px-8 py-1 rounded-b-2xl flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#007fff] animate-pulse" />
           Available for hire
@@ -34,9 +34,10 @@ export default function Header() {
         <div className="flex-1 flex justify-start">
           <Link href="/" className="font-bold text-base sm:text-lg tracking-tight text-neutral-900 flex items-center gap-1.5">
             <span className="w-4 h-4 bg-black rounded-sm transform rotate-45 inline-block" />
-            {portfolioData.details.name}
+            {detailsData.name}
           </Link>
         </div>
+
 
         {/* Center: Navigation Links */}
         <nav className="hidden md:flex items-center justify-center gap-8 flex-1">
