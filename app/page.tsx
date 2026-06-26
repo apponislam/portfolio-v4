@@ -26,39 +26,59 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col items-center">
       {/* 1. Hero Section */}
-      <section className="container mx-auto px-4 md:px-8 pt-16 pb-20 md:py-32 flex flex-col items-center text-center">
-        {details.availableForHire && (
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs text-neutral-500 mb-6 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-            Available for new opportunities
+      <section className="container mx-auto px-4 md:px-8 pt-28 pb-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Left Column: Typography & Actions */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left gap-6">
+          {details.availableForHire && (
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-neutral-300/40 rounded-full text-xs font-semibold text-neutral-600 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Available for new opportunities
+            </div>
+          )}
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-neutral-900 leading-none">
+            {details.name}
+          </h1>
+          
+          <h2 className="text-lg sm:text-xl font-bold uppercase tracking-wide text-neutral-500">
+            {details.title}
+          </h2>
+
+          <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl font-medium">
+            {details.bio}
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black hover:bg-neutral-800 text-white text-xs font-black py-4 px-8 rounded-2xl shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:scale-[1.01] active:scale-[0.99] transition-all uppercase tracking-wider"
+            >
+              Get in touch
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/projects"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-300/60 text-xs font-black py-4 px-8 rounded-2xl shadow-sm hover:scale-[1.01] active:scale-[0.99] transition-all uppercase tracking-wider"
+            >
+              View Projects
+            </Link>
           </div>
-        )}
-
-
-        {/* Dynamic Bold iBox-Lab Style Typography */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.1] max-w-4xl mb-8 animate-fade-in-up">
-          Engineering & <span className="inline-block px-3 py-1.5 mx-1 border border-neutral-200 rounded-full bg-neutral-100 text-sm font-semibold tracking-wide uppercase align-middle text-neutral-600 shadow-inner">Designing</span> Digital Products that <span className="text-neutral-500 underline decoration-orange-500 decoration-4 underline-offset-8">Scale</span>
-        </h1>
-
-        <p className="text-base sm:text-xl text-neutral-600 max-w-2xl mb-10 leading-relaxed">
-          {details.bio}
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Link
-            href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-black hover:bg-neutral-800 text-white text-sm font-semibold px-8 py-3.5 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md"
-          >
-            Get in touch
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/projects"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-1 bg-white hover:bg-neutral-50 text-black border border-neutral-200 text-sm font-semibold px-8 py-3.5 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-sm"
-          >
-            View Projects
-          </Link>
         </div>
+
+        {/* Right Column: Profile Picture Container */}
+        <div className="lg:col-span-5 flex justify-center items-center">
+          <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-[40px] overflow-hidden border border-neutral-300/50 bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.05)] group">
+            <div className="relative w-full h-full rounded-[32px] overflow-hidden">
+              <img
+                src="/avatar.png"
+                alt={details.name}
+                className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* 2. Infinite Sliding Skills Marquee */}
