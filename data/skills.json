@@ -55,14 +55,7 @@
     "name": "Vercel & Netlify",
     "category": "DevOps & Tools"
   },
-  {
-    "name": "UI/UX Prototyping",
-    "category": "Design & Core"
-  },
-  {
-    "name": "Figma",
-    "category": "Design & Core"
-  },
+
   {
     "name": "Responsive Design",
     "category": "Design & Core"
@@ -70,5 +63,21 @@
   {
     "name": "REST & GraphQL APIs",
     "category": "Design & Core"
+  },
+  {
+    "name": "Effective Communication",
+    "category": "Soft Skills"
+  },
+  {
+    "name": "Analytical Problem Solving",
+    "category": "Soft Skills"
+  },
+  {
+    "name": "Team Collaboration",
+    "category": "Soft Skills"
+  },
+  {
+    "name": "Agile & Scrum",
+    "category": "Soft Skills"
   }
 ]
