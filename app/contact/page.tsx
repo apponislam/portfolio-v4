@@ -61,10 +61,28 @@ export default function Contact() {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setErrors({});
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err: any) {
+      setErrors({ form: err.message || 'Failed to send message.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -241,6 +259,12 @@ export default function Contact() {
                 />
                 {errors.message && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.message}</span>}
               </div>
+
+              {errors.form && (
+                <div className="text-red-500 text-xs font-bold text-center border border-red-200/50 bg-red-50 py-3 px-4 rounded-xl">
+                  {errors.form}
+                </div>
+              )}
 
               {/* Submit Button */}
               <button
