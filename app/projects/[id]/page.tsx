@@ -54,7 +54,7 @@ export default async function ProjectDetail({ params }: PageProps) {
   }
 
   return (
-    <main className="container mx-auto px-4 md:px-8 pt-24 pb-12 md:pt-28 md:pb-16 flex flex-col min-h-screen">
+    <main className="container mx-auto px-4 md:px-8 pt-4 pb-12 md:pt-6 md:pb-16 flex flex-col min-h-screen">
       {/* Back Link */}
       <Link
         href="/projects"

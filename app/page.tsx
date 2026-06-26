@@ -6,6 +6,7 @@ import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
 import certificatesData from '@/data/certificates.json';
 import experienceData from '@/data/experience.json';
+import { getBrandIcon } from '@/components/BrandIcons';
 
 export default function Home() {
   const details = detailsData;
@@ -154,8 +155,9 @@ export default function Home() {
                   {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 bg-neutral-50 border border-neutral-200 text-[10px] font-bold text-neutral-700 rounded-lg"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-neutral-50 border border-neutral-200 text-[10px] font-bold text-neutral-700 rounded-lg"
                     >
+                      <span className="shrink-0">{getBrandIcon(tag, "w-3.5 h-3.5")}</span>
                       {tag}
                     </span>
                   ))}

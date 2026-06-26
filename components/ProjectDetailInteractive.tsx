@@ -16,6 +16,7 @@ import {
   Layers,
   Image as ImageIcon
 } from 'lucide-react';
+import { getBrandIcon } from './BrandIcons';
 
 interface Collaborator {
   name: string;
@@ -138,8 +139,9 @@ export default function ProjectDetailInteractive({ project }: Props) {
               {project.technologiesUsed.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 bg-white border border-neutral-300/30 text-[10px] font-bold text-neutral-800 rounded-lg shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-neutral-300/30 text-[10px] font-bold text-neutral-800 rounded-lg shadow-sm"
                 >
+                  <span className="shrink-0">{getBrandIcon(tech, "w-3.5 h-3.5")}</span>
                   {tech}
                 </span>
               ))}
@@ -242,8 +244,9 @@ export default function ProjectDetailInteractive({ project }: Props) {
                     {project.technologiesUsed.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3.5 py-1.5 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300/30 text-[10px] sm:text-xs font-bold text-neutral-800 rounded-xl transition-colors"
+                        className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300/30 text-[10px] sm:text-xs font-bold text-neutral-800 rounded-xl transition-colors"
                       >
+                        <span className="shrink-0">{getBrandIcon(tech, "w-4 h-4")}</span>
                         {tech}
                       </span>
                     ))}

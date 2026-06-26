@@ -202,7 +202,7 @@ export default function Skills() {
   const categories = Array.from(new Set(skills.map((s) => s.category)));
 
   return (
-    <main className="container mx-auto px-4 md:px-8 pt-28 pb-20 flex flex-col min-h-screen">
+    <main className="container mx-auto px-4 md:px-8 pt-6 pb-20 flex flex-col min-h-screen">
       
       {/* Header */}
       <div className="mb-16 max-w-2xl">

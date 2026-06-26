@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import projectsData from '@/data/projects.json';
+import { getBrandIcon } from '@/components/BrandIcons';
 
 export default function Projects() {
   const projects = projectsData;
@@ -59,8 +60,9 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 bg-neutral-50 border border-neutral-200 text-[10px] font-bold text-neutral-700 rounded-lg"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 bg-neutral-50 border border-neutral-200 text-[10px] font-bold text-neutral-700 rounded-lg"
                   >
+                    <span className="shrink-0">{getBrandIcon(tag, "w-3.5 h-3.5")}</span>
                     {tag}
                   </span>
                 ))}
