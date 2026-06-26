@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col min-h-screen bg-[#eaeaea] text-neutral-950`}>
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col min-h-screen bg-[#eaeaea] text-neutral-950`} suppressHydrationWarning>
         <LenisProvider>
           <Header />
           <div className="flex-1 flex flex-col pt-24">

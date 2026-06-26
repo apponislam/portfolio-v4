@@ -15,10 +15,13 @@ export default function Home() {
     <main className="w-full flex flex-col items-center">
       {/* 1. Hero Section */}
       <section className="container mx-auto px-4 md:px-8 pt-16 pb-20 md:py-32 flex flex-col items-center text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs text-neutral-500 mb-6 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-          Available for new opportunities
-        </div>
+        {details.availableForHire && (
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs text-neutral-500 mb-6 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+            Available for new opportunities
+          </div>
+        )}
+
 
         {/* Dynamic Bold iBox-Lab Style Typography */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.1] max-w-4xl mb-8 animate-fade-in-up">
