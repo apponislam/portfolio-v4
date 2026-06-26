@@ -1,27 +1,210 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Link from 'next/link';
+import { ArrowRight, ArrowUpRight, GraduationCap, Award, ExternalLink } from 'lucide-react';
+import portfolioData from '@/data/portfolio.json';
 
 export default function Home() {
+  const { details, projects, education, certificates, skills } = portfolioData;
+
+  // Limit featured projects to first 3
+  const featuredProjects = projects.slice(0, 3);
+  
+  // Highlight some skills for the scrolling marquee ticker
+  const tickerSkills = [...skills.map(s => s.name), ...skills.map(s => s.name)];
+
   return (
-    <>
-      <Navbar />
-      <main className="flex-1 w-full bg-brand-bg flex flex-col">
-        <Hero />
-        <Stats />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main className="w-full flex flex-col items-center">
+      {/* 1. Hero Section */}
+      <section className="container mx-auto px-4 md:px-8 pt-16 pb-20 md:py-32 flex flex-col items-center text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs text-neutral-500 mb-6 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+          Available for new opportunities
+        </div>
+
+        {/* Dynamic Bold iBox-Lab Style Typography */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.1] max-w-4xl mb-8 animate-fade-in-up">
+          Engineering & <span className="inline-block px-3 py-1.5 mx-1 border border-neutral-200 rounded-full bg-neutral-100 text-sm font-semibold tracking-wide uppercase align-middle text-neutral-600 shadow-inner">Designing</span> Digital Products that <span className="text-neutral-500 underline decoration-orange-500 decoration-4 underline-offset-8">Scale</span>
+        </h1>
+
+        <p className="text-base sm:text-xl text-neutral-600 max-w-2xl mb-10 leading-relaxed">
+          {details.bio}
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-black hover:bg-neutral-800 text-white text-sm font-semibold px-8 py-3.5 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md"
+          >
+            Get in touch
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/projects"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-1 bg-white hover:bg-neutral-50 text-black border border-neutral-200 text-sm font-semibold px-8 py-3.5 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-sm"
+          >
+            View Projects
+          </Link>
+        </div>
+      </section>
+
+      {/* 2. Infinite Sliding Skills Marquee */}
+      <section className="w-full border-y border-neutral-100 bg-white py-8 overflow-hidden mb-24">
+        <div className="relative w-full overflow-x-hidden flex items-center">
+          <div className="animate-marquee flex gap-12 text-sm font-semibold text-neutral-400 tracking-wider uppercase whitespace-nowrap">
+            {tickerSkills.map((skill, index) => (
+              <div key={index} className="flex items-center gap-3">
+                <span>{skill}</span>
+                <span className="w-1.5 h-1.5 bg-neutral-300 rounded-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Featured Projects Section */}
+      <section className="container mx-auto px-4 md:px-8 mb-24">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mb-2">
+              Featured Work
+            </h2>
+            <p className="text-neutral-500 text-sm">
+              A curated selection of core applications built with modern tools.
+            </p>
+          </div>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-orange-500 transition-colors mt-4 md:mt-0 group"
+          >
+            View all projects
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featuredProjects.map((project) => (
+            <Link
+              key={project.id}
+              href={`/projects/${project.id}`}
+              className="group flex flex-col bg-white border border-neutral-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+            >
+              {/* Image Container */}
+              <div className="relative aspect-video w-full overflow-hidden bg-neutral-50">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Card Details */}
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs text-neutral-400 font-semibold tracking-wide uppercase">
+                    {project.client}
+                  </span>
+                  <span className="text-xs text-neutral-400 font-medium">{project.year}</span>
+                </div>
+                <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-orange-500 transition-colors flex items-center gap-1">
+                  {project.title}
+                  <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 bg-neutral-50 border border-neutral-100 text-[10px] font-medium rounded text-neutral-500"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2 py-0.5 bg-neutral-50 border border-neutral-100 text-[10px] font-medium rounded text-neutral-400">
+                      +{project.tags.length - 3} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Education & Academic Background */}
+      <section className="container mx-auto px-4 md:px-8 mb-24">
+        <div className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mb-2 flex items-center gap-2">
+            <GraduationCap className="w-7 h-7 text-neutral-800" />
+            Education
+          </h2>
+          <p className="text-neutral-500 text-sm">
+            Academic milestones and studies in software engineering.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {education.map((edu, index) => (
+            <div
+              key={index}
+              className="bg-white border border-neutral-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-4 shadow-sm"
+            >
+              <div className="max-w-2xl">
+                <span className="inline-block text-xs font-semibold text-orange-500 bg-orange-50 dark:bg-orange-950/20 px-2.5 py-1 rounded-full mb-3">
+                  {edu.duration}
+                </span>
+                <h3 className="text-lg font-bold text-neutral-900 mb-1">{edu.degree}</h3>
+                <p className="text-sm font-medium text-neutral-500 mb-3">{edu.institution} &bull; {edu.field}</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">{edu.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Certificates Section */}
+      <section className="container mx-auto px-4 md:px-8 mb-24">
+        <div className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mb-2 flex items-center gap-2">
+            <Award className="w-7 h-7 text-neutral-800" />
+            Certifications
+          </h2>
+          <p className="text-neutral-500 text-sm">
+            Industry accomplishments and technical certifications.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {certificates.map((cert, index) => (
+            <div
+              key={index}
+              className="bg-white border border-neutral-100 rounded-2xl p-6 flex flex-col shadow-sm hover:shadow-md hover:border-neutral-200 transition-all group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-xs text-neutral-400 font-medium">{cert.date}</span>
+                <Award className="w-5 h-5 text-neutral-400 group-hover:text-orange-500 transition-colors" />
+              </div>
+              <h3 className="font-bold text-neutral-900 text-base mb-1 group-hover:text-orange-500 transition-colors">
+                {cert.title}
+              </h3>
+              <p className="text-neutral-500 text-xs mb-6">{cert.issuer}</p>
+              
+              {cert.credentialUrl && (
+                <a
+                  href={cert.credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-neutral-700 hover:text-black transition-colors"
+                >
+                  Verify Credential
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
