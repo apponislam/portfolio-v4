@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import projectsData from '@/data/projects.json';
 import { getBrandIcon } from '@/components/BrandIcons';
@@ -27,9 +28,12 @@ export default function Projects() {
           >
             {/* Image Container */}
             <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 rounded-2xl border border-neutral-200">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={800}
+                height={450}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

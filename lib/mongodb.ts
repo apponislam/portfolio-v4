@@ -1,32 +1,34 @@
 import { MongoClient } from 'mongodb';
 import dns from 'dns';
 
-// Force public DNS resolution to fix querySrv ECONNREFUSED issues on local machines
+// Force public DNS to resolve MongoDB Atlas SRV records
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
-const uri = process.env.NEXT_PUBLIC_MONGODB_URI && !process.env.NEXT_PUBLIC_MONGODB_URI.startsWith('mongodb+srv://')
-  ? process.env.NEXT_PUBLIC_MONGODB_URI
-  : "mongodb://appon_office:Appon_Office@ac-bgbt2ej-shard-00-00.qhziz2s.mongodb.net:27017,ac-bgbt2ej-shard-00-01.qhziz2s.mongodb.net:27017,ac-bgbt2ej-shard-00-02.qhziz2s.mongodb.net:27017/portfoliov4?ssl=true&replicaSet=atlas-14kuc1-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGODB_URI;
 
-const options = {};
+if (!uri) {
+  throw new Error('Please add MONGODB_URI to .env.local');
+}
+
+const options = {
+  serverSelectionTimeoutMS: 10000,  // Fail fast: 10s instead of default 30s
+  connectTimeoutMS: 10000,
+};
 
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
 if (process.env.NODE_ENV === 'development') {
-  // In development mode, use a global variable so that the value
-  // is preserved across module reloads caused by HMR (Hot Module Replacement).
-  let globalWithMongo = global as typeof globalThis & {
+  const g = global as typeof globalThis & {
     _mongoClientPromise?: Promise<MongoClient>;
   };
 
-  if (!globalWithMongo._mongoClientPromise) {
+  if (!g._mongoClientPromise) {
     client = new MongoClient(uri, options);
-    globalWithMongo._mongoClientPromise = client.connect();
+    g._mongoClientPromise = client.connect();
   }
-  clientPromise = globalWithMongo._mongoClientPromise;
+  clientPromise = g._mongoClientPromise;
 } else {
-  // In production mode, it's best to not use a global variable.
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }

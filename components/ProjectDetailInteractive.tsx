@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowLeft, 
   ExternalLink, 
@@ -66,9 +67,13 @@ export default function ProjectDetailInteractive({ project }: Props) {
         
         {/* Cover Canvas with Glass Info Overlay */}
         <div className="relative aspect-[16/10] w-full rounded-[32px] overflow-hidden border border-neutral-300/50 bg-neutral-200 shadow-md group">
-          <img
+          <Image
             src={project.coverPhoto || project.image}
             alt={project.title}
+            width={1200}
+            height={750}
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover w-full h-full scale-[1.01] hover:scale-105 transition-transform duration-700 ease-out"
           />
           
@@ -334,9 +339,12 @@ export default function ProjectDetailInteractive({ project }: Props) {
                       onClick={() => setSelectedImage(pic)}
                       className="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-300/30 bg-neutral-100 shadow-sm cursor-zoom-in group"
                     >
-                      <img
+                      <Image
                         src={pic}
                         alt={`${project.title} screenshot ${idx + 1}`}
+                        width={800}
+                        height={450}
+                        sizes="(max-width: 640px) 100vw, 50vw"
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -365,9 +373,12 @@ export default function ProjectDetailInteractive({ project }: Props) {
           className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-fade-in"
         >
           <div className="relative max-w-5xl w-full max-h-[85vh] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800">
-            <img
+            <Image
               src={selectedImage}
               alt="Preview Zoomed"
+              width={1920}
+              height={1080}
+              sizes="100vw"
               className="object-contain w-full h-full max-h-[85vh] mx-auto"
             />
             <button 

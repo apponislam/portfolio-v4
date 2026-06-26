@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ArrowUpRight, GraduationCap, Award, ExternalLink, Briefcase } from 'lucide-react';
 import detailsData from '@/data/details.json';
 import projectsData from '@/data/projects.json';
@@ -71,9 +72,12 @@ export default function Home() {
         <div className="lg:col-span-5 flex justify-center items-center">
           <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-[40px] overflow-hidden border border-neutral-300/50 bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.05)] group">
             <div className="relative w-full h-full rounded-[32px] overflow-hidden">
-              <img
+              <Image
                 src="/avatar.png"
                 alt={details.name}
+                width={384}
+                height={384}
+                priority
                 className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -125,9 +129,12 @@ export default function Home() {
             >
               {/* Image Container */}
               <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 rounded-2xl border border-neutral-200">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
