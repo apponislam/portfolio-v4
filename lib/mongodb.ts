@@ -4,11 +4,10 @@ import dns from 'dns';
 // Force public DNS resolution to fix querySrv ECONNREFUSED issues on local machines
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your Mongo URI to .env.local');
-}
+const uri = process.env.NEXT_PUBLIC_MONGODB_URI && !process.env.NEXT_PUBLIC_MONGODB_URI.startsWith('mongodb+srv://')
+  ? process.env.NEXT_PUBLIC_MONGODB_URI
+  : "mongodb://appon_office:Appon_Office@ac-bgbt2ej-shard-00-00.qhziz2s.mongodb.net:27017,ac-bgbt2ej-shard-00-01.qhziz2s.mongodb.net:27017,ac-bgbt2ej-shard-00-02.qhziz2s.mongodb.net:27017/portfoliov4?ssl=true&replicaSet=atlas-14kuc1-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0";
 
-const uri = process.env.MONGODB_URI;
 const options = {};
 
 let client: MongoClient;
