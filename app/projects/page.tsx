@@ -8,8 +8,8 @@ export default function Projects() {
 
 
   return (
-    <main className="container mx-auto px-4 md:px-8 py-12 md:py-20 flex flex-col">
-      <div className="mb-16">
+    <main className="container mx-auto px-4 md:px-8 pt-4 pb-20 flex flex-col">
+      <div className="mb-6">
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 mb-4">
           All Projects
         </h1>
@@ -18,7 +18,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <Link
             key={project.id}

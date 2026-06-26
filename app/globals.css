@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --color-blue-600: #2563eb;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+}
+
 @layer base {
   :root {
     --background: #eaeaea;
     --foreground: #09090b;
-    --primary: #0070f3;
-    --accent: #ff4d00;
+    --primary: #2563eb;
+    --accent: #2563eb;
     --muted: #71717a;
     --card: #ffffff;
     --border: #e5e7eb;

@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-orange-500 transition-colors mt-4 md:mt-0 group"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-neutral-900 hover:text-blue-600 transition-colors mt-4 md:mt-0 group"
           >
             View all projects
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -192,7 +192,7 @@ export default function Home() {
               className="bg-white border border-neutral-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-4 shadow-sm"
             >
               <div className="max-w-2xl">
-                <span className="inline-block text-xs font-semibold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full mb-3">
                   {work.duration}
                 </span>
                 <h3 className="text-lg font-bold text-neutral-900 mb-1">{work.role}</h3>
@@ -223,7 +223,7 @@ export default function Home() {
               className="bg-white border border-neutral-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-4 shadow-sm"
             >
               <div className="max-w-2xl">
-                <span className="inline-block text-xs font-semibold text-orange-500 bg-orange-50 dark:bg-orange-950/20 px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full mb-3">
                   {edu.duration}
                 </span>
                 <h3 className="text-lg font-bold text-neutral-900 mb-1">{edu.degree}</h3>
@@ -255,9 +255,9 @@ export default function Home() {
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs text-neutral-400 font-medium">{cert.date}</span>
-                <Award className="w-5 h-5 text-neutral-400 group-hover:text-orange-500 transition-colors" />
+                <Award className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors" />
               </div>
-              <h3 className="font-bold text-neutral-900 text-base mb-1 group-hover:text-orange-500 transition-colors">
+              <h3 className="font-bold text-neutral-900 text-base mb-1 group-hover:text-blue-600 transition-colors">
                 {cert.title}
               </h3>
               <p className="text-neutral-500 text-xs mb-6">{cert.issuer}</p>

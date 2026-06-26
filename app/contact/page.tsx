@@ -128,35 +128,35 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Premium Dark Console Form Container */}
-        <div className="lg:col-span-7 bg-neutral-950 border border-neutral-900 rounded-[36px] p-8 sm:p-12 shadow-2xl relative overflow-hidden group">
+        {/* RIGHT COLUMN: Premium Light Form Card Container */}
+        <div className="lg:col-span-7 bg-white border border-neutral-300/40 rounded-[36px] p-8 sm:p-12 shadow-sm relative overflow-hidden group">
           {/* Subtle background glow */}
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-neutral-800/25 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
           
           {isSuccess ? (
-            <div className="flex flex-col items-center text-center py-12 animate-fade-in text-white">
+            <div className="flex flex-col items-center text-center py-12 animate-fade-in text-neutral-900">
               <CheckCircle2 className="w-16 h-16 text-emerald-500 mb-6" />
               <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-2">
                 Message Sent
               </h2>
-              <p className="text-neutral-400 text-xs sm:text-sm max-w-sm mb-8 leading-relaxed font-semibold">
+              <p className="text-neutral-500 text-xs sm:text-sm max-w-sm mb-8 leading-relaxed font-semibold">
                 Thank you for reaching out! I will review your inquiry and get back to you shortly.
               </p>
               <button
                 onClick={() => setIsSuccess(false)}
-                className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 text-black text-xs font-black uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-sm"
+                className="inline-flex items-center gap-2 bg-black hover:bg-neutral-800 text-white text-xs font-black uppercase tracking-wider px-8 py-4 rounded-2xl transition-all shadow-sm cursor-pointer"
               >
                 Send Another Message
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 text-white">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 text-neutral-900">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Name */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-[9px] font-black uppercase tracking-widest text-neutral-400">
+                  <label htmlFor="name" className="text-[9px] font-black uppercase tracking-widest text-neutral-500">
                     Full Name *
                   </label>
                   <input
@@ -166,16 +166,16 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className={`w-full bg-neutral-900 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-white placeholder-neutral-500 focus:outline-none focus:bg-neutral-900/50 focus:border-white transition-all ${
-                      errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-800 focus:border-neutral-700'
+                    className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all ${
+                      errors.name ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-200 focus:border-neutral-400'
                     }`}
                   />
-                  {errors.name && <span className="text-red-400 text-[10px] font-bold mt-0.5">{errors.name}</span>}
+                  {errors.name && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.name}</span>}
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-[9px] font-black uppercase tracking-widest text-neutral-400">
+                  <label htmlFor="email" className="text-[9px] font-black uppercase tracking-widest text-neutral-500">
                     Email Address *
                   </label>
                   <input
@@ -185,17 +185,17 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className={`w-full bg-neutral-900 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-white placeholder-neutral-500 focus:outline-none focus:bg-neutral-900/50 focus:border-white transition-all ${
-                      errors.email ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-800 focus:border-neutral-700'
+                    className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all ${
+                      errors.email ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-200 focus:border-neutral-400'
                     }`}
                   />
-                  {errors.email && <span className="text-red-400 text-[10px] font-bold mt-0.5">{errors.email}</span>}
+                  {errors.email && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.email}</span>}
                 </div>
               </div>
 
               {/* Subject */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="subject" className="text-[9px] font-black uppercase tracking-widest text-neutral-400">
+                <label htmlFor="subject" className="text-[9px] font-black uppercase tracking-widest text-neutral-500">
                   Subject
                 </label>
                 <input
@@ -205,13 +205,13 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="Project inquiry / Collaboration opportunity"
-                  className="w-full bg-neutral-900 border border-neutral-800 px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-white placeholder-neutral-500 focus:outline-none focus:bg-neutral-900/50 focus:border-white transition-all"
+                  className="w-full bg-neutral-50/60 border border-neutral-200 px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all"
                 />
               </div>
 
               {/* Message */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-[9px] font-black uppercase tracking-widest text-neutral-400">
+                <label htmlFor="message" className="text-[9px] font-black uppercase tracking-widest text-neutral-500">
                   Your Message *
                 </label>
                 <textarea
@@ -221,18 +221,18 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={5}
                   placeholder="Tell me about your project concept, timeline, or requirements..."
-                  className={`w-full bg-neutral-900 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-white placeholder-neutral-500 focus:outline-none focus:bg-neutral-900/50 focus:border-white transition-all resize-none ${
-                    errors.message ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-800 focus:border-neutral-700'
+                  className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all resize-none ${
+                    errors.message ? 'border-red-500/80 focus:border-red-500' : 'border-neutral-200 focus:border-neutral-400'
                   }`}
                 />
-                {errors.message && <span className="text-red-400 text-[10px] font-bold mt-0.5">{errors.message}</span>}
+                {errors.message && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.message}</span>}
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 disabled:bg-neutral-800 text-black text-xs font-black uppercase tracking-widest py-4 rounded-2xl hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg cursor-pointer mt-2"
+                className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-neutral-800 disabled:bg-neutral-200 disabled:text-neutral-400 text-white text-xs font-black uppercase tracking-widest py-4 rounded-2xl hover:scale-[1.01] active:scale-[0.99] transition-all shadow-md cursor-pointer mt-2"
               >
                 {isSubmitting ? 'Sending Message...' : 'Send Message'}
                 <Send className="w-3.5 h-3.5" />

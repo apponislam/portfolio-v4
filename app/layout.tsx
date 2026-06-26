@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col min-h-screen bg-[#eaeaea] text-neutral-950`} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased h-full flex flex-col min-h-screen bg-[#eaeaea] text-neutral-950`} suppressHydrationWarning>
         <LenisProvider>
           <Header />
           <div className="flex-1 flex flex-col pt-24">
