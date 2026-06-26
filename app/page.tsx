@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, GraduationCap, Award, ExternalLink } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, GraduationCap, Award, ExternalLink, Briefcase } from 'lucide-react';
 import detailsData from '@/data/details.json';
 import projectsData from '@/data/projects.json';
 import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
 import certificatesData from '@/data/certificates.json';
+import experienceData from '@/data/experience.json';
 
 export default function Home() {
   const details = detailsData;
@@ -12,6 +13,7 @@ export default function Home() {
   const skills = skillsData;
   const education = educationData;
   const certificates = certificatesData;
+  const experience = experienceData;
 
   // Limit featured projects to first 3
   const featuredProjects = projects.slice(0, 3);
@@ -144,7 +146,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Education & Academic Background */}
+      {/* 4. Work Experience Section */}
+      <section className="container mx-auto px-4 md:px-8 mb-24">
+        <div className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mb-2 flex items-center gap-2">
+            <Briefcase className="w-7 h-7 text-neutral-800" />
+            Work Experience
+          </h2>
+          <p className="text-neutral-500 text-sm">
+            My professional career path and past employment history.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {experience.map((work, index) => (
+            <div
+              key={index}
+              className="bg-white border border-neutral-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-4 shadow-sm"
+            >
+              <div className="max-w-2xl">
+                <span className="inline-block text-xs font-semibold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full mb-3">
+                  {work.duration}
+                </span>
+                <h3 className="text-lg font-bold text-neutral-900 mb-1">{work.role}</h3>
+                <p className="text-sm font-medium text-neutral-500 mb-3">{work.company} &bull; {work.location}</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">{work.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Education & Academic Background */}
       <section className="container mx-auto px-4 md:px-8 mb-24">
         <div className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 mb-2 flex items-center gap-2">
