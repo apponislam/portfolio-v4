@@ -1,16 +1,24 @@
 [
   {
-    "institution": "University of Dhaka",
+    "institution": "Northern University Bangladesh, Dhaka",
     "degree": "Bachelor of Science",
-    "field": "Computer Science & Engineering",
-    "duration": "2020 - 2024",
-    "description": "Graduated with honors. Specialized in Algorithms, Cloud Architectures, and Database Systems. Organized regional programming contests."
+    "field": "Computer Science & Engineering (CSE)",
+    "duration": "Spring 2026 - 2030 (Expected)",
+    "description": "Currently pursuing a BSc in Computer Science & Engineering. Focused on software engineering, algorithms, and modern web technologies.",
+    "status": "Running"
   },
   {
-    "institution": "Govt. Science College",
-    "degree": "Higher Secondary Certificate",
+    "institution": "Dinajpur Polytechnic Institute, Dinajpur",
+    "degree": "Diploma in Engineering",
+    "field": "Computer Technology",
+    "duration": "2020 - 2024",
+    "description": "Completed a 4-year Diploma in Computer Technology. Gained hands-on experience in programming, networking, and system administration."
+  },
+  {
+    "institution": "Police Line High School, Dinajpur",
+    "degree": "Secondary School Certificate (SSC)",
     "field": "Science",
     "duration": "2017 - 2019",
-    "description": "Graduated with GPA 5.00/5.00. Focus on Physics, Chemistry, and Advanced Mathematics."
+    "description": "Completed SSC from the Science group with a strong foundation in Mathematics, Physics, and ICT."
   }
 ]

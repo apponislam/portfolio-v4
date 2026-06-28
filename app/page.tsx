@@ -293,7 +293,27 @@ export default function Home() {
                             accentGlow: "group-hover:text-neutral-900",
                         };
 
-                        if (normInst.includes("dhaka")) {
+                        if (normInst.includes("northern")) {
+                            styles = {
+                                glow: "hover:shadow-[0_25px_60px_rgba(0,82,164,0.08)]",
+                                borderColor: "hover:border-blue-600/30",
+                                accentLine: "bg-blue-700",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/[0.03] hover:to-sky-50/[0.03]",
+                                logoBg: "bg-blue-50/80 group-hover:bg-blue-100/40",
+                                logoBorder: "border-blue-100 group-hover:border-blue-200/40",
+                                logo: (
+                                    <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="22" fill="#003366" />
+                                        <circle cx="24" cy="24" r="20" stroke="#FFD700" strokeWidth="1.5" />
+                                        <path d="M24 10l10 6v12l-10 6-10-6V16l10-6z" stroke="#FFD700" strokeWidth="2" fill="none" />
+                                        <path d="M24 16l5 3v6l-5 3-5-3v-6l5-3z" fill="#FFD700" />
+                                        <text x="24" y="26" fill="#003366" fontSize="8" fontWeight="bold" fontFamily="system-ui" textAnchor="middle">N</text>
+                                    </svg>
+                                ),
+                                badge: "bg-blue-50 text-blue-700 border-blue-100 group-hover:bg-blue-100/50",
+                                accentGlow: "group-hover:text-blue-700",
+                            };
+                        } else if (normInst.includes("polytechnic")) {
                             styles = {
                                 glow: "hover:shadow-[0_25px_60px_rgba(0,104,56,0.08)]",
                                 borderColor: "hover:border-[#006838]/30",
@@ -305,43 +325,39 @@ export default function Home() {
                                     <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
                                         <circle cx="24" cy="24" r="22" fill="#006838" />
                                         <circle cx="24" cy="24" r="20" stroke="#F9A01B" strokeWidth="1.5" />
-                                        <circle cx="24" cy="24" r="16" fill="#E21F26" />
-                                        <circle cx="24" cy="24" r="15" stroke="#FFFFFF" strokeWidth="1" strokeDasharray="1.5 1.5" />
-                                        <path d="M24 18c-1.5-1.5-3.5-2-5.5-2H14v10h4.5c1.8 0 3.2.7 4.5 1.2 1.3-.5 2.7-1.2 4.5-1.2H32V16h-4.5c-2 .5-4 1-5.5 2z" fill="#FFFFFF" stroke="#000" strokeWidth="0.5" strokeLinejoin="round" />
-                                        <line x1="24" y1="18" x2="24" y2="27.5" stroke="#000" strokeWidth="0.8" />
-                                        <path d="M24 33c-1-1.5-2.5-2.5-3.5-2.5 1.5-.4 3-1.5 3.5-3 .5 1.5 2 2.6 3.5 3-1 0-2.5 1-3.5 2.5z" fill="#F9A01B" />
+                                        <path d="M14 34V18l10-6 10 6v16" stroke="#FFFFFF" strokeWidth="2" fill="none" strokeLinejoin="round" />
+                                        <rect x="20" y="22" width="8" height="12" rx="1" fill="#F9A01B" />
+                                        <rect x="22" y="24" width="4" height="4" rx="0.5" fill="#006838" />
+                                        <path d="M24 12l-12 7h24l-12-7z" fill="#FFFFFF" opacity="0.9" />
                                     </svg>
                                 ),
                                 badge: "bg-[#006838]/5 text-[#006838] border-[#006838]/10 group-hover:bg-[#006838]/10",
                                 accentGlow: "group-hover:text-[#006838]",
                             };
-                        } else if (normInst.includes("science")) {
+                        } else if (normInst.includes("police line") || normInst.includes("high school")) {
                             styles = {
                                 glow: "hover:shadow-[0_25px_60px_rgba(37,99,235,0.08)]",
-                                borderColor: "hover:border-blue-500/30",
-                                accentLine: "bg-blue-600",
-                                gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/[0.03] hover:to-cyan-50/[0.03]",
-                                logoBg: "bg-blue-50/80 group-hover:bg-blue-100/40",
-                                logoBorder: "border-blue-100 group-hover:border-blue-200/40",
+                                borderColor: "hover:border-indigo-500/30",
+                                accentLine: "bg-indigo-600",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-indigo-50/[0.03] hover:to-violet-50/[0.03]",
+                                logoBg: "bg-indigo-50/80 group-hover:bg-indigo-100/40",
+                                logoBorder: "border-indigo-100 group-hover:border-indigo-200/40",
                                 logo: (
                                     <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
-                                        <circle cx="24" cy="24" r="22" fill="#006A4E" />
-                                        <circle cx="24" cy="24" r="20" stroke="#F42A41" strokeWidth="1.5" />
-                                        <circle cx="24" cy="24" r="16" fill="#FFFFFF" />
-                                        <ellipse cx="24" cy="24" rx="10" ry="3.5" stroke="#3B82F6" strokeWidth="1.2" transform="rotate(30 24 24)" />
-                                        <ellipse cx="24" cy="24" rx="10" ry="3.5" stroke="#3B82F6" strokeWidth="1.2" transform="rotate(150 24 24)" />
-                                        <ellipse cx="24" cy="24" rx="10" ry="3.5" stroke="#3B82F6" strokeWidth="1.2" transform="rotate(90 24 24)" />
-                                        <circle cx="15.5" cy="19" r="1.2" fill="#3B82F6" />
-                                        <circle cx="32.5" cy="19" r="1.2" fill="#3B82F6" />
-                                        <circle cx="24" cy="14" r="1.2" fill="#3B82F6" />
-                                        <path d="M23 18h2v3.5h-2V18z" fill="#EF4444" />
-                                        <path d="M20 27.5l2.5-5.5h3l2.5 5.5c.3.6-.1 1.5-.8 1.5H20.8c-.7 0-1.1-.9-.8-1.5z" fill="#EF4444" opacity="0.85" />
+                                        <circle cx="24" cy="24" r="22" fill="#3730A3" />
+                                        <circle cx="24" cy="24" r="20" stroke="#818CF8" strokeWidth="1.5" />
+                                        <path d="M14 34V20l10-8 10 8v14" stroke="#FFFFFF" strokeWidth="2" fill="none" strokeLinejoin="round" />
+                                        <rect x="21" y="26" width="6" height="8" rx="1" fill="#818CF8" />
+                                        <circle cx="24" cy="20" r="3" fill="#FFFFFF" />
+                                        <path d="M24 12l-14 8h28l-14-8z" fill="#FFFFFF" opacity="0.85" />
                                     </svg>
                                 ),
-                                badge: "bg-blue-50 text-blue-600 border-blue-100 group-hover:bg-blue-100/50",
-                                accentGlow: "group-hover:text-blue-600",
+                                badge: "bg-indigo-50 text-indigo-600 border-indigo-100 group-hover:bg-indigo-100/50",
+                                accentGlow: "group-hover:text-indigo-600",
                             };
                         }
+
+                        const isRunning = "status" in edu && (edu as { status?: string }).status === "Running";
 
                         return (
                             <div key={index} className={`group relative border border-neutral-300/40 rounded-[36px] bg-white/60 backdrop-blur-md p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-10 transition-all duration-500 ${styles.borderColor} ${styles.glow} ${styles.gradientBg} hover:-translate-y-1`}>
@@ -352,7 +368,15 @@ export default function Home() {
                                 <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-44 shrink-0">
                                     <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
 
-                                    <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[10px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300 md:mt-4`}>{edu.duration}</span>
+                                    <div className="flex flex-col items-center md:items-start gap-2 md:mt-4">
+                                        <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[10px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>{edu.duration}</span>
+                                        {isRunning && (
+                                            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/60 rounded-full text-[10px] font-black uppercase tracking-widest text-emerald-600">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                                Running
+                                            </span>
+                                        )}
+                                    </div>
                                 </div>
 
                                 {/* Right Column: Text & Descriptions */}
