@@ -1,23 +1,9 @@
 [
   {
-    "company": "iBox Lab",
-    "role": "Lead Full-Stack Developer",
-    "duration": "2024 — Present",
-    "location": "Remote",
-    "description": "Architecting modern web solutions, optimizing cloud deployments using AWS & Docker, and leading a team of developers to build high-performance dashboard consoles."
-  },
-  {
-    "company": "Aura Inc.",
-    "role": "Senior Software Engineer",
-    "duration": "2022 — 2024",
+    "company": "Sparktech Agency",
+    "role": "Jr. Full Stack Developer",
+    "duration": "August 2024 — Present",
     "location": "Dhaka, Bangladesh",
-    "description": "Designed and integrated scalable payment checkout systems using Stripe, built robust Node.js backend services, and migrated legacy code to modular Next.js applications."
-  },
-  {
-    "company": "DesignLabs",
-    "role": "Frontend Developer",
-    "duration": "2020 — 2022",
-    "location": "Dhaka, Bangladesh",
-    "description": "Crafted responsive, pixel-perfect user interfaces, optimized rendering paths for real-time WebSocket web applications, and collaborated closely with UI/UX design teams."
+    "description": "Developing and maintaining responsive web applications using React, Next.js, and Node.js. Collaborating closely with back-end APIs and designing optimized databases."
   }
 ]

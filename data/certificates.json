@@ -1,20 +1,21 @@
 [
-  {
-    "title": "AWS Certified Solutions Architect – Associate",
-    "issuer": "Amazon Web Services",
-    "date": "Jan 2025",
-    "credentialUrl": "https://aws.amazon.com"
-  },
-  {
-    "title": "Next.js Advanced Certification",
-    "issuer": "Vercel",
-    "date": "Nov 2024",
-    "credentialUrl": "https://vercel.com"
-  },
-  {
-    "title": "Meta Front-End Developer Professional Certificate",
-    "issuer": "Meta / Coursera",
-    "date": "Aug 2024",
-    "credentialUrl": "https://coursera.org"
-  }
+    {
+        "title": "Next Level Web development",
+        "issuer": "Programming Hero",
+        "date": "19 May 2025",
+        "credentialUrl": "https://programming-hero.com"
+    },
+
+    {
+        "title": "Complete Web Development Course",
+        "issuer": "Programming Hero",
+        "date": "24 June 2024",
+        "credentialUrl": "https://programming-hero.com"
+    },
+    {
+        "title": "Web Designer & Development",
+        "issuer": "Learning and Earning Development Project",
+        "date": "April 2020",
+        "credentialUrl": "https://ledp.ictd.gov.bd"
+    }
 ]

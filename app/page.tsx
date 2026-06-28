@@ -233,7 +233,45 @@ export default function Home() {
                                 badge: "bg-orange-50 text-orange-600 border-orange-100 group-hover:bg-orange-100/50",
                                 accentGlow: "group-hover:text-orange-500",
                             };
+                        } else if (normCompany.includes("sparktech") || normCompany.includes("spark")) {
+                            styles = {
+                                glow: "hover:shadow-[0_25px_60px_rgba(141,198,63,0.08)]",
+                                borderColor: "hover:border-[#8DC63F]/30",
+                                accentLine: "bg-[#8DC63F]",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-lime-50/40 hover:to-emerald-100/20",
+                                logoBg: "bg-white group-hover:bg-lime-50/40",
+                                logoBorder: "border-lime-100 group-hover:border-lime-200/40",
+                                logo: <Image src="/sparktech.png" alt="Sparktech Agency" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
+                                badge: "bg-lime-50 text-lime-700 border-lime-100 group-hover:bg-lime-100/50",
+                                accentGlow: "group-hover:text-[#8DC63F]",
+                            };
                         }
+
+                        // Helper to parse and render experience duration into a premium timeline flow
+                        const renderWorkDuration = () => {
+                            const separator = work.duration.includes("—") ? "—" : "-";
+                            const parts = work.duration.split(separator).map(s => s.trim());
+                            if (parts.length === 2) {
+                                const start = parts[0];
+                                const end = parts[1];
+                                return (
+                                    <div className="flex flex-row items-center gap-1.5 md:mt-3">
+                                        <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300`}>
+                                            {start}
+                                        </span>
+                                        <span className="text-neutral-400 font-bold text-xs">→</span>
+                                        <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300`}>
+                                            {end}
+                                        </span>
+                                    </div>
+                                );
+                            }
+                            return (
+                                <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300 md:mt-4`}>
+                                    {work.duration}
+                                </span>
+                            );
+                        };
 
                         return (
                             <div key={index} className={`group relative border border-neutral-300/40 rounded-[36px] bg-white/60 backdrop-blur-md p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-10 transition-all duration-500 ${styles.borderColor} ${styles.glow} ${styles.gradientBg} hover:-translate-y-1`}>
@@ -241,10 +279,10 @@ export default function Home() {
                                 <div className={`absolute left-0 top-10 bottom-10 w-[4px] rounded-r-full ${styles.accentLine} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
 
                                 {/* Left Column: Logo & Timeline/Badge details */}
-                                <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-44 shrink-0">
-                                    <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
+                                <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-fit shrink-0">
+                                    <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center p-2 shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
 
-                                    <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[10px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300 md:mt-4`}>{work.duration}</span>
+                                    {renderWorkDuration()}
                                 </div>
 
                                 {/* Right Column: Text & Descriptions */}
@@ -298,7 +336,7 @@ export default function Home() {
                                 glow: "hover:shadow-[0_25px_60px_rgba(0,82,164,0.08)]",
                                 borderColor: "hover:border-blue-600/30",
                                 accentLine: "bg-blue-700",
-                                gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/[0.03] hover:to-sky-50/[0.03]",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/40 hover:to-sky-100/20",
                                 logoBg: "bg-white group-hover:bg-blue-50/40",
                                 logoBorder: "border-blue-100 group-hover:border-blue-200/40",
                                 logo: <Image src="/nub-logo.jpg" alt="Northern University Bangladesh" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
@@ -310,7 +348,7 @@ export default function Home() {
                                 glow: "hover:shadow-[0_25px_60px_rgba(0,104,56,0.08)]",
                                 borderColor: "hover:border-[#006838]/30",
                                 accentLine: "bg-[#006838]",
-                                gradientBg: "hover:bg-gradient-to-br hover:from-[#006838]/[0.02] hover:to-[#F9A01B]/[0.02]",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-emerald-50/40 hover:to-amber-50/20",
                                 logoBg: "bg-white group-hover:bg-emerald-50/40",
                                 logoBorder: "border-emerald-100 group-hover:border-emerald-200/40",
                                 logo: <Image src="/dpi-logo.jpg" alt="Dinajpur Polytechnic Institute" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
@@ -322,7 +360,7 @@ export default function Home() {
                                 glow: "hover:shadow-[0_25px_60px_rgba(37,99,235,0.08)]",
                                 borderColor: "hover:border-indigo-500/30",
                                 accentLine: "bg-indigo-600",
-                                gradientBg: "hover:bg-gradient-to-br hover:from-indigo-50/[0.03] hover:to-violet-50/[0.03]",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-indigo-50/40 hover:to-violet-100/20",
                                 logoBg: "bg-white group-hover:bg-indigo-50/40",
                                 logoBorder: "border-indigo-100 group-hover:border-indigo-200/40",
                                 logo: <Image src="/plhs-logo.jpg" alt="Police Line High School Dinajpur" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
@@ -347,12 +385,12 @@ export default function Home() {
                                 }
                                 return (
                                     <div className="flex flex-col items-center md:items-start gap-2 md:mt-3">
-                                        <div className="flex items-center gap-1.5">
-                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                        <div className="flex flex-row items-center gap-1.5 whitespace-nowrap">
+                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300`}>
                                                 {start}
                                             </span>
                                             <span className="text-neutral-400 font-bold text-xs">→</span>
-                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300`}>
                                                 {end}
                                             </span>
                                         </div>
@@ -374,7 +412,7 @@ export default function Home() {
                             }
                             return (
                                 <div className="flex flex-col items-center md:items-start gap-2 md:mt-3">
-                                    <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                    <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} whitespace-nowrap transition-all duration-300`}>
                                         {edu.duration}
                                     </span>
                                     {isRunning && (
@@ -393,7 +431,7 @@ export default function Home() {
                                 <div className={`absolute left-0 top-10 bottom-10 w-[4px] rounded-r-full ${styles.accentLine} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
 
                                 {/* Left Column: Logo & Timeline/Badge details */}
-                                <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-44 shrink-0">
+                                <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-fit shrink-0">
                                     <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center p-2 shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
 
                                     {renderDuration()}
@@ -469,7 +507,27 @@ export default function Home() {
                                 accentLine: "bg-[#0081FB]",
                                 badge: "bg-[#0081FB]/5 text-[#0081FB] border-[#0081FB]/10",
                             };
+                        } else if (normIssuer.includes("programming hero")) {
+                            styles = {
+                                glow: "hover:shadow-[0_12px_40px_rgba(239,68,68,0.12)]",
+                                borderColor: "hover:border-red-500/40",
+                                bgClass: "bg-white",
+                                logo: <Image src="/ph.webp" alt="Programming Hero" width={24} height={24} className="w-6 h-6 object-contain rounded" />,
+                                accentLine: "bg-[#ef4444]",
+                                badge: "bg-red-50 text-red-600 border-red-100",
+                            };
+                        } else if (normIssuer.includes("learning and earning")) {
+                            styles = {
+                                glow: "hover:shadow-[0_12px_40px_rgba(16,185,129,0.12)]",
+                                borderColor: "hover:border-emerald-500/40",
+                                bgClass: "bg-white",
+                                logo: <Award className="w-5 h-5 text-emerald-500" />,
+                                accentLine: "bg-[#10b981]",
+                                badge: "bg-emerald-50 text-emerald-600 border-emerald-100",
+                            };
                         }
+
+
 
                         return (
                             <div key={index} className={`group relative ${styles.bgClass} border border-neutral-300/40 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-sm transition-all duration-500 ${styles.borderColor} ${styles.glow} hover:-translate-y-1.5`}>
