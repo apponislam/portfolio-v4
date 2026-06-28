@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Appon Islam | Full-Stack Engineer & Solutions Architect",
+    default: "Appon Islam | Full-Stack Developer",
     template: "%s | Appon Islam",
   },
   description: "Dynamic development portfolio showcasing projects, skills, education, and credentials.",

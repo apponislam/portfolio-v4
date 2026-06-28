@@ -1,14 +1,15 @@
 {
   "name": "Appon Islam",
-  "title": "Full-Stack Engineer & Solutions Architect",
+  "title": "Full-Stack Developer",
   "bio": "I partner with forward-thinking teams to build scalable, high-performance web products. Specializing in Next.js, robust APIs, and cloud deployments.",
-  "email": "apponislam@example.com",
+  "email": "apponislamdev@gmail.com",
+  "phone": "+8801722779803",
   "location": "Dhaka, Bangladesh",
   "availableForHire": true,
   "socials": {
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "twitter": "https://twitter.com",
-    "facebook": "https://facebook.com"
+    "github": "https://github.com/apponislam",
+    "linkedin": "https://www.linkedin.com/in/apponislam",
+    "facebook": "https://www.facebook.com/appon19",
+    "twitter": "https://x.com/appon2003"
   }
 }

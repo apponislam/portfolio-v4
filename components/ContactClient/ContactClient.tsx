@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, ArrowRight, MessageSquare, Copy, Check } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, ArrowRight, MessageSquare, Copy, Check, Phone } from 'lucide-react';
 import detailsData from '@/data/details.json';
 import { getBrandIcon } from '@/components/BrandIcons/BrandIcons';
 
 export default function ContactClient() {
-  const { email, location, socials } = detailsData;
+  const { email, location, socials, phone } = detailsData;
 
   // Form State
   const [formData, setFormData] = useState({
@@ -141,6 +141,21 @@ export default function ContactClient() {
                 <span className="text-xs font-bold text-neutral-800">{location}</span>
               </div>
             </div>
+
+            {/* Phone Widget */}
+            {phone && (
+              <div className="bg-white border border-neutral-300/40 rounded-2xl p-4 flex items-center gap-3 shadow-sm">
+                <div className="p-2.5 bg-neutral-50 border border-neutral-200 rounded-xl text-neutral-600">
+                  <Phone className="w-4 h-4 text-emerald-600" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[8px] font-extrabold uppercase tracking-widest text-neutral-400">Direct Phone</span>
+                  <a href={`tel:${phone}`} className="text-xs font-bold text-neutral-800 hover:text-black transition-colors">
+                    {phone}
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Social Icons row */}
