@@ -218,27 +218,93 @@ export default function Home() {
             <GraduationCap className="w-7 h-7 text-neutral-800" />
             Education
           </h2>
-          <p className="text-neutral-500 text-sm">
+          <p className="text-neutral-500 text-sm font-semibold">
             Academic milestones and studies in software engineering.
           </p>
         </div>
 
         <div className="flex flex-col gap-6">
-          {education.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-white border border-neutral-100 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-start justify-between gap-4 shadow-sm"
-            >
-              <div className="max-w-2xl">
-                <span className="inline-block text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100/50 px-3 py-1 rounded-full mb-3">
-                  {edu.duration}
-                </span>
-                <h3 className="text-lg font-bold text-neutral-900 mb-1">{edu.degree}</h3>
-                <p className="text-sm font-medium text-neutral-500 mb-3">{edu.institution} &bull; {edu.field}</p>
-                <p className="text-neutral-600 text-sm leading-relaxed">{edu.description}</p>
+          {education.map((edu, index) => {
+            const normInst = edu.institution.toLowerCase();
+            let styles = {
+              glow: "hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)]",
+              borderColor: "hover:border-neutral-400/40",
+              accentLine: "bg-neutral-400",
+              iconBg: "bg-neutral-50",
+              logo: <GraduationCap className="w-6 h-6 text-neutral-400" />,
+              badge: "bg-neutral-50 text-neutral-500 border-neutral-200"
+            };
+
+            if (normInst.includes("dhaka")) {
+              styles = {
+                glow: "hover:shadow-[0_12px_40px_rgba(0,104,56,0.08)]",
+                borderColor: "hover:border-[#006838]/40",
+                accentLine: "bg-[#006838]",
+                iconBg: "bg-[#006838]/5",
+                logo: <GraduationCap className="w-7 h-7 text-[#006838]" />,
+                badge: "bg-[#006838]/5 text-[#006838] border-[#006838]/10"
+              };
+            } else if (normInst.includes("science")) {
+              styles = {
+                glow: "hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)]",
+                borderColor: "hover:border-blue-500/40",
+                accentLine: "bg-blue-600",
+                iconBg: "bg-blue-50",
+                logo: (
+                  <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    <path d="M2 12h20" />
+                  </svg>
+                ),
+                badge: "bg-blue-50 text-blue-600 border-blue-100"
+              };
+            }
+
+            return (
+              <div
+                key={index}
+                className={`group relative bg-white border border-neutral-300/40 rounded-[32px] p-6 sm:p-8 flex flex-col sm:flex-row gap-6 transition-all duration-500 ${styles.borderColor} ${styles.glow} hover:-translate-y-1`}
+              >
+                {/* Left colored border line decoration */}
+                <div className={`absolute left-0 top-8 bottom-8 w-[3px] rounded-r-full ${styles.accentLine} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
+
+                {/* Institution logo container */}
+                <div className="shrink-0">
+                  <div className={`w-14 h-14 rounded-2xl ${styles.iconBg} border border-neutral-200/50 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-500`}>
+                    {styles.logo}
+                  </div>
+                </div>
+
+                {/* Content area */}
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Degree and Timeline */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                      <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-neutral-900 leading-snug group-hover:text-black transition-colors">
+                        {edu.degree}
+                      </h3>
+                      <span className={`self-start sm:self-center inline-flex items-center px-3 py-1 border rounded-full text-[10px] font-extrabold uppercase tracking-wider ${styles.badge}`}>
+                        {edu.duration}
+                      </span>
+                    </div>
+
+                    {/* School & Field info */}
+                    <p className="text-sm font-black text-neutral-500 mb-4 flex items-center gap-1.5 uppercase tracking-wide">
+                      <span>{edu.institution}</span>
+                      <span className="text-neutral-300">&bull;</span>
+                      <span className="text-neutral-400 font-bold">{edu.field}</span>
+                    </p>
+
+                    {/* Course Description */}
+                    <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed max-w-3xl">
+                      {edu.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
