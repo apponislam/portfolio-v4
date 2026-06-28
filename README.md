@@ -15,6 +15,7 @@
   <a href="https://react.dev"><img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" /></a>
   <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" /></a>
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /></a>
+  <a href="https://apponislamv4.vercel.app"><img src="https://img.shields.io/badge/Live_Demo-apponislamv4.vercel.app-blueviolet?logo=vercel" alt="Live Demo" /></a>
   <a href="#license"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
 </p>
 
@@ -23,6 +24,8 @@
 ## ✨ Overview
 
 A meticulously crafted developer portfolio featuring smooth scroll animations, a bento-grid skills showcase with pixel-perfect brand SVG icons, interactive project case studies, and a functional contact form — all rendered server-side for instant load times and flawless SEO.
+
+🔗 **Live Demo:** **[apponislamv4.vercel.app](https://apponislamv4.vercel.app)**
 
 ---
 
@@ -179,6 +182,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Appon Islam** — Full-Stack Developer
 
+- 🌐 Website: [apponislamv4.vercel.app](https://apponislamv4.vercel.app)
 - 📧 Email: [apponislamdev@gmail.com](mailto:apponislamdev@gmail.com)
 - 🔗 LinkedIn: [linkedin.com/in/apponislam](https://www.linkedin.com/in/apponislam)
 - 🐙 GitHub: [github.com/apponislam](https://github.com/apponislam)

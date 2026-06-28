@@ -333,6 +333,60 @@ export default function Home() {
 
                         const isRunning = "status" in edu && (edu as { status?: string }).status === "Running";
 
+                        // Helper to parse and render duration into a premium timeline flow
+                        const renderDuration = () => {
+                            const separator = edu.duration.includes("—") ? "—" : "-";
+                            const parts = edu.duration.split(separator).map(s => s.trim());
+                            if (parts.length === 2) {
+                                const start = parts[0];
+                                let end = parts[1];
+                                let isExpected = false;
+                                if (end.toLowerCase().includes("expected")) {
+                                    isExpected = true;
+                                    end = end.replace(/\(?expected\)?/gi, "").trim();
+                                }
+                                return (
+                                    <div className="flex flex-col items-center md:items-start gap-2 md:mt-3">
+                                        <div className="flex items-center gap-1.5">
+                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                                {start}
+                                            </span>
+                                            <span className="text-neutral-400 font-bold text-xs">→</span>
+                                            <span className={`inline-flex items-center px-3 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                                {end}
+                                            </span>
+                                        </div>
+                                        <div className="flex flex-wrap items-center gap-1.5">
+                                            {isExpected && (
+                                                <span className="inline-flex items-center px-2.5 py-0.5 bg-amber-50 border border-amber-200/60 rounded-full text-[9px] font-extrabold uppercase tracking-wider text-amber-700">
+                                                    Expected
+                                                </span>
+                                            )}
+                                            {isRunning && (
+                                                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 border border-emerald-200/60 rounded-full text-[9px] font-extrabold uppercase tracking-wider text-emerald-600">
+                                                    <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+                                                    Running
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            }
+                            return (
+                                <div className="flex flex-col items-center md:items-start gap-2 md:mt-3">
+                                    <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[9px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>
+                                        {edu.duration}
+                                    </span>
+                                    {isRunning && (
+                                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-emerald-50 border border-emerald-200/60 rounded-full text-[9px] font-extrabold uppercase tracking-wider text-emerald-600">
+                                            <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+                                            Running
+                                        </span>
+                                    )}
+                                </div>
+                            );
+                        };
+
                         return (
                             <div key={index} className={`group relative border border-neutral-300/40 rounded-[36px] bg-white/60 backdrop-blur-md p-6 sm:p-10 flex flex-col md:flex-row gap-6 md:gap-10 transition-all duration-500 ${styles.borderColor} ${styles.glow} ${styles.gradientBg} hover:-translate-y-1`}>
                                 {/* Left colored decorative timeline stripe */}
@@ -340,17 +394,9 @@ export default function Home() {
 
                                 {/* Left Column: Logo & Timeline/Badge details */}
                                 <div className="flex md:flex-col items-center md:items-start justify-between md:justify-start gap-4 md:w-44 shrink-0">
-                                    <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
+                                    <div className={`w-20 h-20 rounded-[28px] ${styles.logoBg} border ${styles.logoBorder} flex items-center justify-center p-2 shadow-sm group-hover:rotate-3 transition-all duration-500`}>{styles.logo}</div>
 
-                                    <div className="flex flex-col items-center md:items-start gap-2 md:mt-4">
-                                        <span className={`inline-flex items-center px-4 py-1.5 border rounded-full text-[10px] font-black uppercase tracking-widest ${styles.badge} transition-all duration-300`}>{edu.duration}</span>
-                                        {isRunning && (
-                                            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/60 rounded-full text-[10px] font-black uppercase tracking-widest text-emerald-600">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                                Running
-                                            </span>
-                                        )}
-                                    </div>
+                                    {renderDuration()}
                                 </div>
 
                                 {/* Right Column: Text & Descriptions */}
