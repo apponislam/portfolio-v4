@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, ArrowUp, ArrowRight } from 'lucide-react';
+import { Mail, ArrowUp, ArrowRight, Phone } from 'lucide-react';
 import detailsData from '@/data/details.json';
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -71,22 +71,22 @@ export default function Footer() {
               <h4 className="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Navigation</h4>
               <ul className="flex flex-col gap-2.5">
                 <li>
-                  <Link href="/" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                  <Link href="/" className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projects" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                  <Link href="/projects" className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/skills" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                  <Link href="/skills" className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex">
                     Skills
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors">
+                  <Link href="/contact" className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex">
                     Contact
                   </Link>
                 </li>
@@ -103,9 +103,9 @@ export default function Footer() {
                       href={socials.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                      className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5"
                     >
-                      <GithubIcon className="w-3.5 h-3.5" />
+                      <GithubIcon className="w-4 h-4" />
                       GitHub
                     </a>
                   </li>
@@ -116,9 +116,9 @@ export default function Footer() {
                       href={socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                      className="text-sm font-semibold text-neutral-600 hover:text-[#0A66C2] transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5"
                     >
-                      <LinkedinIcon className="w-3.5 h-3.5" />
+                      <LinkedinIcon className="w-4 h-4" />
                       LinkedIn
                     </a>
                   </li>
@@ -129,9 +129,9 @@ export default function Footer() {
                       href={socials.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                      className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5"
                     >
-                      <XIcon className="w-3.5 h-3.5" />
+                      <XIcon className="w-4 h-4" />
                       X
                     </a>
                   </li>
@@ -142,9 +142,9 @@ export default function Footer() {
                       href={socials.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5"
+                      className="text-sm font-semibold text-neutral-600 hover:text-[#0866FF] transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5"
                     >
-                      <FacebookIcon className="w-3.5 h-3.5" />
+                      <FacebookIcon className="w-4 h-4" />
                       Facebook
                     </a>
                   </li>
@@ -159,14 +159,23 @@ export default function Footer() {
                 {email && (
                   <a
                     href={`mailto:${email}`}
-                    className="text-xs font-semibold text-neutral-600 hover:text-black transition-colors inline-flex items-center gap-1.5 break-all"
+                    className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5 break-all"
                   >
-                    <Mail className="w-3.5 h-3.5 shrink-0" />
+                    <Mail className="w-4 h-4 shrink-0 text-neutral-500" />
                     {email}
                   </a>
                 )}
+                {detailsData.phone && (
+                  <a
+                    href={`tel:${detailsData.phone}`}
+                    className="text-sm font-semibold text-neutral-600 hover:text-black transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1.5"
+                  >
+                    <Phone className="w-4 h-4 shrink-0 text-neutral-500" />
+                    {detailsData.phone}
+                  </a>
+                )}
                 <div className="text-[11px] text-neutral-500 font-medium">
-                  Based in Bangladesh
+                  Based in Dhaka, Bangladesh
                 </div>
               </div>
             </div>
