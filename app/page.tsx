@@ -299,17 +299,9 @@ export default function Home() {
                                 borderColor: "hover:border-blue-600/30",
                                 accentLine: "bg-blue-700",
                                 gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/[0.03] hover:to-sky-50/[0.03]",
-                                logoBg: "bg-blue-50/80 group-hover:bg-blue-100/40",
+                                logoBg: "bg-white group-hover:bg-blue-50/40",
                                 logoBorder: "border-blue-100 group-hover:border-blue-200/40",
-                                logo: (
-                                    <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
-                                        <circle cx="24" cy="24" r="22" fill="#003366" />
-                                        <circle cx="24" cy="24" r="20" stroke="#FFD700" strokeWidth="1.5" />
-                                        <path d="M24 10l10 6v12l-10 6-10-6V16l10-6z" stroke="#FFD700" strokeWidth="2" fill="none" />
-                                        <path d="M24 16l5 3v6l-5 3-5-3v-6l5-3z" fill="#FFD700" />
-                                        <text x="24" y="26" fill="#003366" fontSize="8" fontWeight="bold" fontFamily="system-ui" textAnchor="middle">N</text>
-                                    </svg>
-                                ),
+                                logo: <Image src="/nub-logo.jpg" alt="Northern University Bangladesh" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
                                 badge: "bg-blue-50 text-blue-700 border-blue-100 group-hover:bg-blue-100/50",
                                 accentGlow: "group-hover:text-blue-700",
                             };
@@ -319,18 +311,9 @@ export default function Home() {
                                 borderColor: "hover:border-[#006838]/30",
                                 accentLine: "bg-[#006838]",
                                 gradientBg: "hover:bg-gradient-to-br hover:from-[#006838]/[0.02] hover:to-[#F9A01B]/[0.02]",
-                                logoBg: "bg-emerald-50/80 group-hover:bg-emerald-100/40",
+                                logoBg: "bg-white group-hover:bg-emerald-50/40",
                                 logoBorder: "border-emerald-100 group-hover:border-emerald-200/40",
-                                logo: (
-                                    <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
-                                        <circle cx="24" cy="24" r="22" fill="#006838" />
-                                        <circle cx="24" cy="24" r="20" stroke="#F9A01B" strokeWidth="1.5" />
-                                        <path d="M14 34V18l10-6 10 6v16" stroke="#FFFFFF" strokeWidth="2" fill="none" strokeLinejoin="round" />
-                                        <rect x="20" y="22" width="8" height="12" rx="1" fill="#F9A01B" />
-                                        <rect x="22" y="24" width="4" height="4" rx="0.5" fill="#006838" />
-                                        <path d="M24 12l-12 7h24l-12-7z" fill="#FFFFFF" opacity="0.9" />
-                                    </svg>
-                                ),
+                                logo: <Image src="/dpi-logo.jpg" alt="Dinajpur Polytechnic Institute" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
                                 badge: "bg-[#006838]/5 text-[#006838] border-[#006838]/10 group-hover:bg-[#006838]/10",
                                 accentGlow: "group-hover:text-[#006838]",
                             };
@@ -340,18 +323,9 @@ export default function Home() {
                                 borderColor: "hover:border-indigo-500/30",
                                 accentLine: "bg-indigo-600",
                                 gradientBg: "hover:bg-gradient-to-br hover:from-indigo-50/[0.03] hover:to-violet-50/[0.03]",
-                                logoBg: "bg-indigo-50/80 group-hover:bg-indigo-100/40",
+                                logoBg: "bg-white group-hover:bg-indigo-50/40",
                                 logoBorder: "border-indigo-100 group-hover:border-indigo-200/40",
-                                logo: (
-                                    <svg className="w-12 h-12 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 48 48" fill="none">
-                                        <circle cx="24" cy="24" r="22" fill="#3730A3" />
-                                        <circle cx="24" cy="24" r="20" stroke="#818CF8" strokeWidth="1.5" />
-                                        <path d="M14 34V20l10-8 10 8v14" stroke="#FFFFFF" strokeWidth="2" fill="none" strokeLinejoin="round" />
-                                        <rect x="21" y="26" width="6" height="8" rx="1" fill="#818CF8" />
-                                        <circle cx="24" cy="20" r="3" fill="#FFFFFF" />
-                                        <path d="M24 12l-14 8h28l-14-8z" fill="#FFFFFF" opacity="0.85" />
-                                    </svg>
-                                ),
+                                logo: <Image src="/plhs-logo.jpg" alt="Police Line High School Dinajpur" width={48} height={48} className="w-12 h-12 object-contain rounded-lg transition-transform duration-500 group-hover:scale-105" />,
                                 badge: "bg-indigo-50 text-indigo-600 border-indigo-100 group-hover:bg-indigo-100/50",
                                 accentGlow: "group-hover:text-indigo-600",
                             };
