@@ -17,7 +17,7 @@ import {
   Layers,
   Image as ImageIcon
 } from 'lucide-react';
-import { getBrandIcon } from './BrandIcons';
+import { getBrandIcon } from '@/components/BrandIcons/BrandIcons';
 
 interface Collaborator {
   name: string;

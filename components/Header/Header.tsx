@@ -34,6 +34,7 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
     { name: 'Skills', href: '/skills' },
+    { name: 'Contact', href: '/contact' },
   ];
 
 
@@ -52,7 +53,7 @@ export default function Header() {
       )}
 
       <header
-        className={`fixed left-0 right-0 mx-auto z-50 transition-all duration-500 ease-in-out ${
+          className={`fixed left-0 right-0 mx-auto z-50 transition-all duration-500 ease-in-out ${
           scrolled
             ? 'top-0 w-full rounded-none bg-[#eaeaea]/90 backdrop-blur-md py-4 border-b border-neutral-300/50 shadow-sm'
             : 'top-8 w-[92%] md:w-[88%] max-w-6xl rounded-4xl border border-neutral-300/50 bg-[#eaeaea]/85 backdrop-blur-md py-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]'
@@ -92,13 +93,15 @@ export default function Header() {
           {/* Right Side: Contact Button */}
           <div className="flex-1 flex justify-end items-center gap-4">
             <div className="hidden md:block">
-              <Link
-                href="/contact"
+              <a
+                href={detailsData.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-black text-white hover:bg-neutral-800 text-xs font-bold px-6 py-2.5 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
-                Contact
+                Hire me
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Icon */}
@@ -138,14 +141,16 @@ export default function Header() {
             })}
 
             <div className="border-t border-neutral-300/50 pt-4 flex flex-col gap-4">
-              <Link
-                href="/contact"
+              <a
+                href={detailsData.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="inline-flex items-center justify-between w-full text-sm font-semibold uppercase tracking-wider text-black hover:text-neutral-700 transition-colors"
               >
-                Contact
+                Hire me
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         )}

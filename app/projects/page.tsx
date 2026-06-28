@@ -1,8 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import projectsData from '@/data/projects.json';
-import { getBrandIcon } from '@/components/BrandIcons';
+import { getBrandIcon } from '@/components/BrandIcons/BrandIcons';
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "A complete showcase of systems, products, and software projects developed by Appon Islam.",
+};
 
 export default function Projects() {
   const projects = projectsData;

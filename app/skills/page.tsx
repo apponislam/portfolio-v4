@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import skillsData from '@/data/skills.json';
+
+export const metadata: Metadata = {
+  title: "Skills & Expertise",
+  description: "A comprehensive look at the technologies, languages, databases, and frameworks that Appon Islam works with.",
+};
 import { 
   Code, 
   Server, 

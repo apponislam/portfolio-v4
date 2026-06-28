@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/LenisProvider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LenisProvider from "@/components/LenisProvider/LenisProvider";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +18,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Appon Islam | Full-Stack Engineer Portfolio",
+  title: {
+    default: "Appon Islam | Full-Stack Engineer & Solutions Architect",
+    template: "%s | Appon Islam",
+  },
   description: "Dynamic development portfolio showcasing projects, skills, education, and credentials.",
 };
 

@@ -7,7 +7,7 @@ import skillsData from '@/data/skills.json';
 import educationData from '@/data/education.json';
 import certificatesData from '@/data/certificates.json';
 import experienceData from '@/data/experience.json';
-import { getBrandIcon } from '@/components/BrandIcons';
+import { getBrandIcon } from '@/components/BrandIcons/BrandIcons';
 
 export default function Home() {
   const details = detailsData;

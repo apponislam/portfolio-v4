@@ -1,8 +1,9 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Tag } from 'lucide-react';
 import projectsData from '../../../data/projects.json';
-import ProjectDetailInteractive from '@/components/ProjectDetailInteractive';
+import ProjectDetailInteractive from '@/components/ProjectDetailInteractive/ProjectDetailInteractive';
 
 interface Collaborator {
   name: string;
@@ -35,6 +36,23 @@ interface Project {
 
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const typedProjects = projectsData as Project[];
+  const project = typedProjects.find((p) => p.id === id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+  };
 }
 
 export async function generateStaticParams() {
