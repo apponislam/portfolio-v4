@@ -249,39 +249,95 @@ export default function Home() {
             <Award className="w-7 h-7 text-neutral-800" />
             Certifications
           </h2>
-          <p className="text-neutral-500 text-sm">
+          <p className="text-neutral-500 text-sm font-semibold">
             Industry accomplishments and technical certifications.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {certificates.map((cert, index) => (
-            <div
-              key={index}
-              className="bg-white border border-neutral-100 rounded-2xl p-6 flex flex-col shadow-sm hover:shadow-md hover:border-neutral-200 transition-all group"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs text-neutral-400 font-medium">{cert.date}</span>
-                <Award className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 transition-colors" />
+          {certificates.map((cert, index) => {
+            const normIssuer = cert.issuer.toLowerCase();
+            let styles = {
+              glow: "hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]",
+              borderColor: "hover:border-neutral-400/40",
+              bgClass: "bg-white",
+              logo: <Award className="w-5 h-5 text-neutral-400" />,
+              accentLine: "bg-neutral-400",
+              badge: "bg-neutral-50 text-neutral-500 border-neutral-200"
+            };
+
+            if (normIssuer.includes("aws") || normIssuer.includes("amazon")) {
+              styles = {
+                glow: "hover:shadow-[0_12px_40px_rgba(255,153,0,0.12)]",
+                borderColor: "hover:border-[#FF9900]/40",
+                bgClass: "bg-white",
+                logo: getBrandIcon("aws", "w-6 h-6"),
+                accentLine: "bg-[#FF9900]",
+                badge: "bg-[#FF9900]/5 text-[#FF9900] border-[#FF9900]/10"
+              };
+            } else if (normIssuer.includes("vercel")) {
+              styles = {
+                glow: "hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)]",
+                borderColor: "hover:border-neutral-800/40",
+                bgClass: "bg-white",
+                logo: getBrandIcon("vercel", "w-5 h-5"),
+                accentLine: "bg-black",
+                badge: "bg-neutral-100 text-neutral-900 border-neutral-200"
+              };
+            } else if (normIssuer.includes("meta") || normIssuer.includes("coursera")) {
+              styles = {
+                glow: "hover:shadow-[0_12px_40px_rgba(0,129,251,0.12)]",
+                borderColor: "hover:border-[#0081FB]/40",
+                bgClass: "bg-white",
+                logo: getBrandIcon(normIssuer.includes("meta") ? "meta" : "coursera", "w-6 h-6"),
+                accentLine: "bg-[#0081FB]",
+                badge: "bg-[#0081FB]/5 text-[#0081FB] border-[#0081FB]/10"
+              };
+            }
+
+            return (
+              <div
+                key={index}
+                className={`group relative ${styles.bgClass} border border-neutral-300/40 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-sm transition-all duration-500 ${styles.borderColor} ${styles.glow} hover:-translate-y-1.5`}
+              >
+                {/* Accent decoration line */}
+                <div className={`absolute top-0 left-8 right-8 h-[3px] rounded-b-full ${styles.accentLine} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
+
+                <div>
+                  {/* Top Bar with Brand Logo and Date Badge */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-neutral-50 border border-neutral-200/50 flex items-center justify-center group-hover:bg-white group-hover:scale-105 transition-all duration-500 shadow-sm">
+                      {styles.logo}
+                    </div>
+                    <span className={`inline-flex items-center px-3 py-1 border rounded-full text-[10px] font-bold uppercase tracking-wider ${styles.badge}`}>
+                      {cert.date}
+                    </span>
+                  </div>
+
+                  {/* Title and Issuer */}
+                  <h3 className="font-black text-neutral-900 text-base sm:text-lg mb-1 leading-snug group-hover:text-black transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="text-neutral-500 text-xs font-bold uppercase tracking-wider mb-8">
+                    {cert.issuer}
+                  </p>
+                </div>
+
+                {/* Verification link */}
+                {cert.credentialUrl && (
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-neutral-700 hover:text-black transition-colors group/link mt-auto pt-4 border-t border-neutral-100/60"
+                  >
+                    Verify Credential
+                    <ArrowUpRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
               </div>
-              <h3 className="font-bold text-neutral-900 text-base mb-1 group-hover:text-blue-600 transition-colors">
-                {cert.title}
-              </h3>
-              <p className="text-neutral-500 text-xs mb-6">{cert.issuer}</p>
-              
-              {cert.credentialUrl && (
-                <a
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-neutral-700 hover:text-black transition-colors"
-                >
-                  Verify Credential
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>
