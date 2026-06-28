@@ -95,6 +95,7 @@ export function getBrandIcon(name: string, className = "w-4 h-4") {
       );
     case "aws":
     case "aws (s3, ec2, lambda)":
+    case "aws ecs":
       return (
         <svg className={`${className} text-[#FF9900]`} viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0L1.7 5.9v12.2L12 24l10.3-5.9V5.9L12 0zm0 3.5c1.8 0 3.4.6 4.7 1.6L5.1 16.7c-1-1.3-1.6-2.9-1.6-4.7 0-4.6 3.7-8.3 8.5-8.3zm0 17c-1.8 0-3.4-.6-4.7-1.6L18.9 7.3c1 1.3 1.6 2.9 1.6 4.7 0 4.6-3.7 8.3-8.5 8.3z"/>
@@ -132,6 +133,92 @@ export function getBrandIcon(name: string, className = "w-4 h-4") {
       return (
         <svg className={`${className} text-[#1877F2]`} viewBox="0 0 24 24" fill="currentColor">
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      );
+    case "socket.io":
+      return (
+        <svg className={`${className} text-neutral-900`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1.88 17.52h-3.76l1.2-4.8h-2.12l3.4-6.8h3.16l-1.32 5.2h2.24l-3.8 6.4z"/>
+        </svg>
+      );
+    case "html5 canvas api":
+    case "html5 canvas":
+      return (
+        <svg className={`${className} text-[#F16529]`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19C5.03345 19.1749 5.09333 19.4312 5.01168 19.6663C4.83151 20.1852 4.7709 20.7392 4.84659 21.2891C4.91979 21.8206 5.42168 22 5.95857 22H12Z" fill="none"/>
+          <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"/>
+          <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"/>
+          <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"/>
+          <circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"/>
+        </svg>
+      );
+    case "redis":
+    case "redis pub/sub":
+      return (
+        <svg className={`${className} text-[#A32422]`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      );
+    case "framer motion":
+      return (
+        <svg className={`${className} text-black`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M0 0h24L12 12h12v12H0l12-12H0V0z"/>
+        </svg>
+      );
+    case "stripe":
+    case "stripe api":
+      return (
+        <svg className={`${className} text-[#635BFF]`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.962 10.98c0-1.252-.962-1.782-2.483-1.782-1.614 0-3.328.618-4.468 1.258l-.946-2.585c1.472-.756 3.738-1.218 5.922-1.218 3.992 0 6.22 1.956 6.22 5.176 0 4.148-3.376 5.485-5.972 6.554-1.892.774-2.502 1.233-2.502 2.05 0 1.05.976 1.545 2.518 1.545 1.896 0 3.79-.696 4.966-1.39l.947 2.6c-1.464.912-3.926 1.39-6.273 1.39-4.218 0-6.495-2.023-6.495-5.267 0-4.048 3.208-5.328 6.012-6.467 1.767-.714 2.506-1.18 2.506-2.066z" transform="scale(0.8) translate(3, 3)"/>
+        </svg>
+      );
+    case "graphql":
+    case "graphql client":
+      return (
+        <svg className={`${className} text-[#E10098]`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M12 2L21 7V17L12 22L3 17V7L12 2z"/>
+          <circle cx="12" cy="2" r="2" fill="currentColor"/>
+          <circle cx="21" cy="7" r="2" fill="currentColor"/>
+          <circle cx="21" cy="17" r="2" fill="currentColor"/>
+          <circle cx="12" cy="22" r="2" fill="currentColor"/>
+          <circle cx="3" cy="17" r="2" fill="currentColor"/>
+          <circle cx="3" cy="7" r="2" fill="currentColor"/>
+          <path d="M12 2l9 15H3L12 2zM12 22L3 7h18L12 22z" strokeWidth="1"/>
+        </svg>
+      );
+    case "shopify":
+    case "shopify storefront api":
+      return (
+        <svg className={`${className} text-[#95BF47]`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.8 6.4L17 2.3c-.2-.4-.6-.7-1-.7H8c-.4 0-.8.3-1 .7L5.2 6.4H1.5c-.8 0-1.5.7-1.5 1.5v12.3c0 1.2.9 2.2 2.1 2.2h19.8c1.2 0 2.1-1 2.1-2.2V7.9c0-.8-.7-1.5-1.5-1.5h-3.7zM8.5 3.1h7l1.4 3.3H7.1l1.4-3.3zm11.9 16.6c0 .4-.3.7-.7.7H4.3c-.4 0-.7-.3-.7-.7V9.5h16.8v10.2z"/>
+        </svg>
+      );
+    case "firebase":
+    case "firebase authentication":
+    case "firestore database":
+      return (
+        <svg className={`${className} text-[#FFA611]`} viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.89 15.75L5.43 5.86c.07-.46.42-.82.88-.87.46-.05.9.19 1.09.61L9 8.25l2.89-5.46c.21-.4.65-.63 1.1-.57.45.06.82.38.93.82l2.19 8.76L3.89 15.75z" fill="#FFA000"/>
+          <path d="M20.09 17.78L12.01 22 3.89 15.75l8.12 4.22c.39.31.63.79.57 1.29l1.77-15.65c.06-.5-.43-.88-.93-.94-.5-.06-.99.17-1.2.63l-1.76 3.4z" fill="#F57C00"/>
+          <path d="M12.01 18.5L3.89 15.75l1.54-9.89 6.58 12.14 8.08-9.88.57 1.29-8.66 11.23z" fill="#FFCA28"/>
+        </svg>
+      );
+    case "recharts":
+      return (
+        <svg className={`${className} text-[#00C49F]`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+      );
+    case "websockets":
+    case "websockets api":
+      return (
+        <svg className={`${className} text-indigo-500`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="17 1 21 5 17 9"/>
+          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+          <polyline points="7 23 3 19 7 15"/>
+          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
         </svg>
       );
     default:

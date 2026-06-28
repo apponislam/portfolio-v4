@@ -16,6 +16,18 @@
     "category": "Frontend"
   },
   {
+    "name": "Framer Motion",
+    "category": "Frontend"
+  },
+  {
+    "name": "HTML5 Canvas API",
+    "category": "Frontend"
+  },
+  {
+    "name": "Recharts",
+    "category": "Frontend"
+  },
+  {
     "name": "Node.js",
     "category": "Backend"
   },
@@ -40,6 +52,22 @@
     "category": "Backend"
   },
   {
+    "name": "Socket.io",
+    "category": "Backend"
+  },
+  {
+    "name": "Redis Pub/Sub",
+    "category": "Backend"
+  },
+  {
+    "name": "GraphQL Client",
+    "category": "Backend"
+  },
+  {
+    "name": "WebSockets API",
+    "category": "Backend"
+  },
+  {
     "name": "Docker & Kubernetes",
     "category": "DevOps & Tools"
   },
@@ -55,7 +83,18 @@
     "name": "Vercel & Netlify",
     "category": "DevOps & Tools"
   },
-
+  {
+    "name": "Stripe API",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "Shopify Storefront API",
+    "category": "DevOps & Tools"
+  },
+  {
+    "name": "Firebase",
+    "category": "DevOps & Tools"
+  },
   {
     "name": "Responsive Design",
     "category": "Design & Core"
