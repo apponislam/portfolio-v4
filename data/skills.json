@@ -45,9 +45,14 @@
     "description": "Minimal, fast, and scalable barebones state management."
   },
   {
-    "name": "Animation Libraries",
+    "name": "Framer Motion",
     "category": "Frontend",
-    "description": "Creating fluid, production-ready motions and transitions."
+    "description": "Creating fluid, production-ready animations and page transitions."
+  },
+  {
+    "name": "GSAP",
+    "category": "Frontend",
+    "description": "High-performance HTML5 animations and scroll-driven timelines."
   },
   {
     "name": "Shadcn UI",
