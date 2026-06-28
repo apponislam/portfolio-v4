@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="public/avatar.png" width="120" height="120" style="border-radius: 50%;" alt="Appon Islam" />
+  <a href="https://github.com/apponislam/portfolio-v4">
+    <img src="https://raw.githubusercontent.com/apponislam/portfolio-v4/main/public/appon.png" width="120" height="120" alt="Appon Islam" />
+  </a>
 </p>
 
 <h1 align="center">Appon Islam — Portfolio v4</h1>

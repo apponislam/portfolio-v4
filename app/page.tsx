@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="lg:col-span-5 flex justify-center items-center">
                     <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-[40px] overflow-hidden border border-neutral-300/50 bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.05)] group">
                         <div className="relative w-full h-full rounded-[32px] overflow-hidden">
-                            <Image src="/avatar.png" alt={details.name} width={384} height={384} priority className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-500" />
+                            <Image src="/appon.png" alt={details.name} width={384} height={384} priority className="object-cover w-full h-full scale-[1.01] group-hover:scale-105 transition-transform duration-500" />
                         </div>
                     </div>
                 </div>
