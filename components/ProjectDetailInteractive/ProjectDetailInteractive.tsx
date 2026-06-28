@@ -50,7 +50,7 @@ export default function ProjectDetailInteractive({ project }: Props) {
             {/* LEFT PANEL: Visual Showcase & Primary Action Card (Sticky) */}
             <div className="lg:col-span-6 flex flex-col gap-6 lg:sticky lg:top-28">
                 {/* Cover Canvas with Glass Info Overlay */}
-                <div className="relative aspect-[16/10] w-full rounded-[32px] overflow-hidden border border-neutral-300/50 bg-neutral-200 shadow-md group">
+                <div className="relative aspect-16/10 w-full rounded-[32px] overflow-hidden border border-neutral-300/50 bg-neutral-200 shadow-md group">
                     <Image src={project.coverPhoto || project.image} alt={project.title} width={1200} height={750} priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover w-full h-full scale-[1.01] hover:scale-105 transition-transform duration-700 ease-out" />
 
                     {/* Glass details bar at bottom of image */}
@@ -59,7 +59,7 @@ export default function ProjectDetailInteractive({ project }: Props) {
                             <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-500">Timeline</span>
                             <span className="text-xs font-black text-neutral-900">{duration}</span>
                         </div>
-                        <div className="h-6 w-[1px] bg-neutral-300/40" />
+                        <div className="h-6 w-px bg-neutral-300/40" />
                         <div className="flex flex-col items-end">
                             <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-500">Status</span>
                             <span className="inline-flex items-center gap-1 text-xs font-black text-black">
@@ -254,7 +254,7 @@ export default function ProjectDetailInteractive({ project }: Props) {
 
             {/* FULLSCREEN LIGHTBOX MODAL */}
             {selectedImage && (
-                <div onClick={() => setSelectedImage(null)} className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-fade-in">
+                <div onClick={() => setSelectedImage(null)} className="fixed inset-0 z-100 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-fade-in">
                     <div className="relative max-w-5xl w-full max-h-[85vh] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800">
                         <Image src={selectedImage} alt="Preview Zoomed" width={1920} height={1080} sizes="100vw" className="object-contain w-full h-full max-h-[85vh] mx-auto" />
                         <button onClick={() => setSelectedImage(null)} className="absolute top-4 right-4 bg-black/60 hover:bg-black text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-wider border border-white/20 transition-all">
