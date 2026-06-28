@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, ArrowUp, ArrowRight, Phone } from 'lucide-react';
+import { Mail, ArrowUp, ArrowRight, Phone, MapPin } from 'lucide-react';
 import detailsData from '@/data/details.json';
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -33,7 +33,7 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { socials, email } = detailsData;
+  const { socials, email, location } = detailsData;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -174,9 +174,12 @@ export default function Footer() {
                     {detailsData.phone}
                   </a>
                 )}
-                <div className="text-[11px] text-neutral-500 font-medium">
-                  Based in Dhaka, Bangladesh
-                </div>
+                {location && (
+                  <div className="text-sm font-semibold text-neutral-600 inline-flex items-center gap-1.5 py-0.5">
+                    <MapPin className="w-4 h-4 shrink-0 text-neutral-500" />
+                    {location}
+                  </div>
+                )}
               </div>
             </div>
 
