@@ -1,122 +1,172 @@
 [
   {
-    "name": "React / Next.js",
-    "category": "Frontend"
+    "name": "React",
+    "category": "Frontend",
+    "description": "Building interactive, component-based user interfaces."
+  },
+  {
+    "name": "Next.js",
+    "category": "Frontend",
+    "description": "Building performant, SEO-friendly React applications."
+  },
+  {
+    "name": "JavaScript",
+    "category": "Frontend",
+    "description": "Developing dynamic, interactive web logic and applications."
   },
   {
     "name": "TypeScript",
-    "category": "Frontend"
+    "category": "Frontend",
+    "description": "Enhance JavaScript with static types, making code more reliable."
   },
   {
     "name": "Tailwind CSS",
-    "category": "Frontend"
+    "category": "Frontend",
+    "description": "Rapidly build modern user interfaces with utility-first CSS."
   },
   {
-    "name": "HTML5 / CSS3",
-    "category": "Frontend"
+    "name": "Redux",
+    "category": "Frontend",
+    "description": "Predictable and centralized state management for complex apps."
   },
   {
-    "name": "Framer Motion",
-    "category": "Frontend"
-  },
-  {
-    "name": "HTML5 Canvas API",
-    "category": "Frontend"
+    "name": "Socket.io Client",
+    "category": "Frontend",
+    "description": "Enabling real-time, event-based bi-directional communications."
   },
   {
     "name": "Recharts",
-    "category": "Frontend"
+    "category": "Frontend",
+    "description": "Building beautiful, responsive charts for data visualization."
+  },
+  {
+    "name": "Zustand",
+    "category": "Frontend",
+    "description": "Minimal, fast, and scalable barebones state management."
+  },
+  {
+    "name": "Animation Libraries",
+    "category": "Frontend",
+    "description": "Creating fluid, production-ready motions and transitions."
+  },
+  {
+    "name": "Shadcn UI",
+    "category": "Frontend",
+    "description": "Designing accessible, customizable component systems."
   },
   {
     "name": "Node.js",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Designing scalable and secure server-side applications and runtimes."
   },
   {
     "name": "Go (Golang)",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Writing blazing fast, concurrent, and highly efficient backend services."
   },
   {
     "name": "Express.js",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Developing robust REST APIs and routing structures using Node.js."
   },
   {
     "name": "PostgreSQL",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Modeling complex relational data structures with transaction-safe databases."
   },
   {
     "name": "MongoDB",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Structuring document-based, highly flexible, and scalable NoSQL database systems."
   },
   {
     "name": "Prisma ORM",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Type-safe database querying and schema migrations for Node.js and TypeScript."
   },
   {
     "name": "Socket.io",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Enabling real-time, bi-directional event-based communication between clients and servers."
   },
   {
     "name": "Redis Pub/Sub",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Scaling messaging systems and real-time state with in-memory caching."
   },
   {
     "name": "GraphQL Client",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Querying nested data efficiently with precise GraphQL requests."
   },
   {
     "name": "WebSockets API",
-    "category": "Backend"
+    "category": "Backend",
+    "description": "Implementing raw, low-overhead persistent connections for instant data sync."
   },
   {
     "name": "Docker & Kubernetes",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Containerizing applications and managing multi-node server cluster orchestrations."
   },
   {
     "name": "AWS (S3, EC2, Lambda)",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Deploying and managing scalable, secure, and serverless cloud services."
   },
   {
     "name": "Git & GitHub Actions",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Automating deployment pipelines and version-controlling code repositories."
   },
   {
     "name": "Vercel & Netlify",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Deploying jamstack and serverless frontend projects with zero configuration."
   },
   {
     "name": "Stripe API",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Integrating secure, flexible online payment processing and subscriptions."
   },
   {
     "name": "Shopify Storefront API",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Building custom headless e-commerce storefronts and checkout workflows."
   },
   {
     "name": "Firebase",
-    "category": "DevOps & Tools"
+    "category": "DevOps & Tools",
+    "description": "Leveraging serverless auth, databases, and hosting for rapid app development."
   },
   {
     "name": "Responsive Design",
-    "category": "Design & Core"
+    "category": "Design & Core",
+    "description": "Ensuring fluid layouts that deliver optimal user experiences on any device size."
   },
   {
     "name": "REST & GraphQL APIs",
-    "category": "Design & Core"
+    "category": "Design & Core",
+    "description": "Designing clear, developer-friendly, and standardized API architectures."
   },
   {
     "name": "Effective Communication",
-    "category": "Soft Skills"
+    "category": "Soft Skills",
+    "description": "Clearly explaining complex concepts to both technical and non-technical stakeholders."
   },
   {
     "name": "Analytical Problem Solving",
-    "category": "Soft Skills"
+    "category": "Soft Skills",
+    "description": "Deconstructing complex bugs and challenges into clean, modular solutions."
   },
   {
     "name": "Team Collaboration",
-    "category": "Soft Skills"
+    "category": "Soft Skills",
+    "description": "Working cross-functionally with designers, product managers, and developers."
   },
   {
     "name": "Agile & Scrum",
-    "category": "Soft Skills"
+    "category": "Soft Skills",
+    "description": "Iterating quickly in fast-paced sprint cycles with continuous feedback."
   }
 ]
