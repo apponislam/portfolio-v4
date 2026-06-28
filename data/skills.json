@@ -64,11 +64,7 @@
     "category": "Backend",
     "description": "Designing scalable and secure server-side applications and runtimes."
   },
-  {
-    "name": "Go (Golang)",
-    "category": "Backend",
-    "description": "Writing blazing fast, concurrent, and highly efficient backend services."
-  },
+
   {
     "name": "Express.js",
     "category": "Backend",
