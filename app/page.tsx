@@ -478,6 +478,7 @@ export default function Home() {
                             logo: <Award className="w-5 h-5 text-neutral-400" />,
                             accentLine: "bg-neutral-400",
                             badge: "bg-neutral-50 text-neutral-500 border-neutral-200",
+                            gradientBg: "hover:bg-gradient-to-br hover:from-neutral-50/50 hover:to-neutral-100/30",
                         };
 
                         if (normIssuer.includes("aws") || normIssuer.includes("amazon")) {
@@ -488,6 +489,7 @@ export default function Home() {
                                 logo: getBrandIcon("aws", "w-6 h-6"),
                                 accentLine: "bg-[#FF9900]",
                                 badge: "bg-[#FF9900]/5 text-[#FF9900] border-[#FF9900]/10",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-amber-50/40 hover:to-orange-100/20",
                             };
                         } else if (normIssuer.includes("vercel")) {
                             styles = {
@@ -497,6 +499,7 @@ export default function Home() {
                                 logo: getBrandIcon("vercel", "w-5 h-5"),
                                 accentLine: "bg-black",
                                 badge: "bg-neutral-100 text-neutral-900 border-neutral-200",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-neutral-50/50 hover:to-neutral-100/30",
                             };
                         } else if (normIssuer.includes("meta") || normIssuer.includes("coursera")) {
                             styles = {
@@ -506,15 +509,17 @@ export default function Home() {
                                 logo: getBrandIcon(normIssuer.includes("meta") ? "meta" : "coursera", "w-6 h-6"),
                                 accentLine: "bg-[#0081FB]",
                                 badge: "bg-[#0081FB]/5 text-[#0081FB] border-[#0081FB]/10",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-blue-50/40 hover:to-indigo-100/20",
                             };
                         } else if (normIssuer.includes("programming hero")) {
                             styles = {
-                                glow: "hover:shadow-[0_12px_40px_rgba(239,68,68,0.12)]",
-                                borderColor: "hover:border-red-500/40",
+                                glow: "hover:shadow-[0_12px_40px_rgba(217,70,239,0.12)]",
+                                borderColor: "hover:border-fuchsia-500/40",
                                 bgClass: "bg-white",
                                 logo: <Image src="/ph.webp" alt="Programming Hero" width={24} height={24} className="w-6 h-6 object-contain rounded" />,
-                                accentLine: "bg-[#ef4444]",
-                                badge: "bg-red-50 text-red-600 border-red-100",
+                                accentLine: "bg-[#d946ef]",
+                                badge: "bg-fuchsia-50 text-fuchsia-600 border-fuchsia-100",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-fuchsia-50/40 hover:to-violet-100/20",
                             };
                         } else if (normIssuer.includes("learning and earning")) {
                             styles = {
@@ -524,13 +529,14 @@ export default function Home() {
                                 logo: <Award className="w-5 h-5 text-emerald-500" />,
                                 accentLine: "bg-[#10b981]",
                                 badge: "bg-emerald-50 text-emerald-600 border-emerald-100",
+                                gradientBg: "hover:bg-gradient-to-br hover:from-emerald-50/40 hover:to-teal-100/20",
                             };
                         }
 
 
 
                         return (
-                            <div key={index} className={`group relative ${styles.bgClass} border border-neutral-300/40 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-sm transition-all duration-500 ${styles.borderColor} ${styles.glow} hover:-translate-y-1.5`}>
+                            <div key={index} className={`group relative ${styles.bgClass} border border-neutral-300/40 rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-sm transition-all duration-500 ${styles.borderColor} ${styles.glow} ${styles.gradientBg} hover:-translate-y-1.5`}>
                                 {/* Accent decoration line */}
                                 <div className={`absolute top-0 left-8 right-8 h-[3px] rounded-b-full ${styles.accentLine} opacity-0 group-hover:opacity-100 transition-all duration-500`} />
 
