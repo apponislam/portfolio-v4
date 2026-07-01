@@ -43,7 +43,7 @@ export default function Header() {
       {/* 1. Centered Top Notch stuck to the ceiling */}
       {detailsData.availableForHire && (
         <div
-          className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-8 py-1 rounded-b-2xl flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 ${
+          className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-8 py-1 rounded-b-3xl flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 ${
             scrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
           }`}
         >
