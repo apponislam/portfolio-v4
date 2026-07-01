@@ -217,7 +217,7 @@ export default function ContactClient() {
                                         name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        placeholder="John Doe"
+                                        placeholder="Enter your full name"
                                         className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all ${errors.name ? "border-red-500/80 focus:border-red-500" : "border-neutral-200 focus:border-neutral-400"}`}
                                     />
                                     {errors.name && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.name}</span>}
@@ -234,7 +234,7 @@ export default function ContactClient() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        placeholder="john@example.com"
+                                        placeholder="Enter your email address"
                                         className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all ${errors.email ? "border-red-500/80 focus:border-red-500" : "border-neutral-200 focus:border-neutral-400"}`}
                                     />
                                     {errors.email && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.email}</span>}
@@ -252,7 +252,7 @@ export default function ContactClient() {
                                     name="subject"
                                     value={formData.subject}
                                     onChange={handleChange}
-                                    placeholder="Project inquiry / Collaboration opportunity"
+                                    placeholder="What is this message about?"
                                     className="w-full bg-neutral-50/60 border border-neutral-200 px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all"
                                 />
                             </div>
@@ -268,7 +268,7 @@ export default function ContactClient() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={5}
-                                    placeholder="Tell me about your project concept, timeline, or requirements..."
+                                    placeholder="Share your ideas, project details, or any questions you have..."
                                     className={`w-full bg-neutral-50/60 border px-5 py-4 rounded-2xl text-xs sm:text-sm font-semibold text-neutral-900 placeholder-neutral-400 focus:outline-none focus:bg-white focus:border-black transition-all resize-none ${errors.message ? "border-red-500/80 focus:border-red-500" : "border-neutral-200 focus:border-neutral-400"}`}
                                 />
                                 {errors.message && <span className="text-red-500 text-[10px] font-bold mt-0.5">{errors.message}</span>}
