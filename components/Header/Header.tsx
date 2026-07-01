@@ -42,14 +42,15 @@ export default function Header() {
     <>
       {/* 1. Centered Top Notch stuck to the ceiling */}
       {detailsData.availableForHire && (
-        <div
-          className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-8 py-1 rounded-b-3xl flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 ${
+        <Link
+          href="/contact"
+          className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-8 py-1 hover:pb-2 rounded-b-3xl flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest shadow-[0_2px_4px_rgba(0,0,0,0.1)] hover:bg-neutral-800 hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-300 group ${
             scrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
           }`}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#007fff] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#007fff] animate-pulse group-hover:scale-125 transition-transform duration-300" />
           Available for hire
-        </div>
+        </Link>
       )}
 
       <header
